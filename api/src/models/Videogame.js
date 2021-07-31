@@ -30,6 +30,11 @@ module.exports = (sequelize) => {
     background_image: {
       type: DataTypes.STRING,
       allowNull: true
+    },
+    rating: {
+      type: DataTypes.INTEGER,
+      allowNull: true
     }
   });
+  
 };
