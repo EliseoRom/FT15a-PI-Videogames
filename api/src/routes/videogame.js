@@ -3,7 +3,7 @@ const router = require('express').Router();
 const axios = require('axios').default;
 const { v4: uuidv4 } = require('uuid');
 
-// ------- DEFINO MI GET -----------//
+// ------- ROUTER-----GET---------//
 
 router.get('/:idGame', async(req, res) => {
     const {idGame } = req.params;
@@ -44,7 +44,23 @@ router.get('/:idGame', async(req, res) => {
 
 
 //--------ROUTER----POST-------//
+router.post('/', async(req, res) => {
+    try {
+        const { name, genres, description, released, rating, plataforms, image } = req.body;
+        const id = "local" + uuidv4();
+        const newvideoGame = {id, name, description, released, rating, plataforms, image, local: true};
+        const createGame = await Videogame.create(newvideoGame);
 
+         // create game
+         genres.forEach( async (genre) => {
+             let genreDb = await Genre.findByPk(genre)
+             createGame.setGenres(genreDb);
+         });
+         return res.send(createGame);
+    } catch (err) {
+        console.log(err)
+    }
+});
 
 
 module.exports = router;
