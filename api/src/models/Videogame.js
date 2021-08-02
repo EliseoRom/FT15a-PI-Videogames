@@ -8,42 +8,41 @@ module.exports = (sequelize) => {
     id: {
       //creo la ID que sea de tipo UUID para generar un numero randown con letras y numeros
       // para que no se pisen o sobreescriba 
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      primaryKey: true,
-      allowNull:false,
-
+      //allowNull (es para que si o si tenga el id que le indico) 
+      // si lo seteo en false sig que NO permito que este vacio -- si lo seteo en null (si te permito que este vacio)
+      
+        type: DataTypes.STRING,
+        primaryKey: true,
+        allowNull: false
+    },
+    image: {
+        type: DataTypes.STRING,
+        allowNull: true
     },
     name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true
+        type: DataTypes.STRING,
+        allowNull: false
     },
     description: {
-      type: DataTypes.TEXT,
-      allowNull: false
+        type: DataTypes.TEXT,
+        allowNull: false
     },
-    released: {
-      type: DataTypes.DATEONLY,
-      allowNull: true
-
-    },
-    background_image: {
-      type: DataTypes.STRING,
-      allowNull: true
+    dateToRelase: {
+        type: DataTypes.STRING,
+        allowNull: true
     },
     rating: {
-      type: DataTypes.INTEGER,
-      allowNull: true
+        type: DataTypes.STRING,
+        allowNull: true
     },
     platforms: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false
-  },
-  local: {
-      type: DataTypes.BOOLEAN,
-      allowNull: true
-  }
+        type: DataTypes.ARRAY(DataTypes.STRING),
+        allowNull: false
+    },
+    local: {
+        type: DataTypes.BOOLEAN,
+        allowNull: true
+    }
   });
 
 };

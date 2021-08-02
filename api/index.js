@@ -27,7 +27,7 @@ const PORT = process.env.PORT || 3001
 conn.sync({ force: true }).then(() => {
   console.log('La coneccion con la base de datos si es correcta')
   server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
+    console.log('% listening at 3001'); // eslint-disable-line no-console
   });
 });
 //app.listen(PORT,() => console.log(`Listening in port${PORT}`))

@@ -4,17 +4,17 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   
-  sequelize.define('generos', {
+  sequelize.define('genre', {
     // nombre de los tipos de generenos de games 
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
     id: {
       type: DataTypes.STRING,
       primaryKey: true,
       allowNull: false,
-    } 
+  },
+  name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+  }
   
   });
   

@@ -1,8 +1,8 @@
 require('dotenv').config();
-const { Sequelize, BelongsToMany } = require('sequelize');
+const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const Generos = require('./models/Generos');
+const Generos = require('./models/genre');
 const {
   DB_USER, DB_PASSWORD, DB_HOST,
 } = process.env;
@@ -31,13 +31,13 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Videogame } = sequelize.models;
+const { Videogame, Genre } = sequelize.models;
 
-// Aca vendrian las relaciones
+// Aca vendrian las relaciones de los archivos models
 // Product.hasMany(Reviews);
 
-Videogame.belongsToMany(Generos, { through: 'videogame_generos', timestamps: false });
-Generos.belongsToMany(Videogame, { through: 'videogame_generos', timestamps: false });
+Videogame.belongsToMany(Genre, { through: 'videogame_genre', timestamps: false });
+Genre.belongsToMany(Videogame, { through: 'videogame_genre', timestamps: false });
 
 
 
@@ -45,3 +45,7 @@ module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize,     // para importart la conexión { conn } = require('./db.js');
 };
+/* 
+tener nuestro propios generos
+union entre el cliente y el servidor
+*/
