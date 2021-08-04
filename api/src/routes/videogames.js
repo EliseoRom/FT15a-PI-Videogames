@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     let totalGames;
     let returnedGames;
     if (name) {
-      callApi = await axios.get(`${RAWGGAMES}?key=${KEY}&search=${name}`);
+      callApi = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
       externalGames = await callApi.data.results
       localGames = await Videogame.findAll({
         where: {
@@ -43,7 +43,7 @@ router.get('/', async (req, res) => {
 
 
 
-    callApi = await axios.get(`${RAWGGAMES}?key=${KEY}`);
+    callApi = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
     externalGames = await callApi.data.results
     localGames = await Videogame.findAll({
       include: {
@@ -86,7 +86,7 @@ router.get('/:page', async (req, res) => {
       return res.json(returnedGames);
     }
     
-    let callApi = await axios.get(`${RAWGGAMES}?key=${KEY}&page=${page}`);
+    let callApi = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
     let externalGames = await callApi.data.results;
 
     externalGames = await externalGames && externalGames.map(game => ({

@@ -19,8 +19,14 @@ router.get('/', (_req, res) => {
 });
 
 
-router.get('/genres', (_req, res) => {
+router.get('/idgenres', (_req, res) => {
     return res.send('Esta es la ruta genres dale nomasssssssssssssssssssss')
+});
+router.get('/idvideogames', (_req, res) => {
+    return res.send('Esta es la ruta VIDEO-GAMES dale nomasssssssssssssssssssss')
+});
+router.get('/idvideogame', (_req, res) => {
+    return res.send('Esta es la ruta VIDEO_GAME dale noma')
 });
 
 module.exports = router;

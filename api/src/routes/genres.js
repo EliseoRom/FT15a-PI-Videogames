@@ -1,3 +1,4 @@
+// RENDERIZO LA RUTA GENRES
 const { Genre } = require("../db");
 const router = require("express").Router();
 

@@ -1,3 +1,5 @@
+//Renderizar la ruta id, y la ruta post
+
 const { Videogame, Genre } = require('../db');
 const router = require('express').Router();
 const axios = require('axios').default;
@@ -5,7 +7,7 @@ const { v4: uuidv4 } = require('uuid');
 
 // ------- ROUTER-----GET----VIDEOGAME-----//
 
-router.get('/:idGame', async(req, res) => {
+router.get('/:idgame', async(req, res) => {
     const {idGame } = req.params;
     try {
         let isLocal = idGame.slice(0, 5)
@@ -22,7 +24,7 @@ router.get('/:idGame', async(req, res) => {
             })
             .catch(err => res.status(500).send({ error: err }));
         }
-        let callApi = await axios.get(`${RAWGGAMES}/${idGame}?key=${KEY}`);
+        let callApi = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
         let externalGame = await callApi.data;
 
         externalGame = await externalGame && {
@@ -64,4 +66,3 @@ router.post('/', async(req, res) => {
 
 
 module.exports = router;
-

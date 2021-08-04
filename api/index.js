@@ -31,6 +31,8 @@ conn.sync({ force: true }).then(() => {
     console.log('% listening at 3001'); // eslint-disable-line no-console
   });
 });
+
+
 //app.listen(PORT,() => console.log(`Listening in port${PORT}`))
 
 // del lado del cliente -----> react redux
