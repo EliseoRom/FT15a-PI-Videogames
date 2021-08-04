@@ -1,9 +1,9 @@
 //                       _oo0oo_
 //                      o8888888o
-//      GAMES           88" . "88
-//        API           (| 0_0 |)
-//                      0\  =  /0
-//                    ___/`---'\___
+//                      88" . "88
+//       API           (| 0_0 |)
+//      VIDEO          0\  =  /0
+//     GAMES :D       ___/`---'\___
 //                  .' \\|     |// '.
 //                 / \\|||  :  |||// \
 //                / _||||| -:- |||||- \
@@ -20,6 +20,7 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const Videogame = require('./src/models/Videogame.js');
+const axios = require('axios').default;
 require("dotenv").config()
 
 const PORT = process.env.PORT || 3001

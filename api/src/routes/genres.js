@@ -1,6 +1,9 @@
 const { Genre } = require("../db");
 const router = require("express").Router();
 
+
+
+
 router.get("/", function (_req, res) {
   Genre.findAll({})
     .then((genres) => {

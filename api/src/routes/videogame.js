@@ -3,7 +3,7 @@ const router = require('express').Router();
 const axios = require('axios').default;
 const { v4: uuidv4 } = require('uuid');
 
-// ------- ROUTER-----GET---------//
+// ------- ROUTER-----GET----VIDEOGAME-----//
 
 router.get('/:idGame', async(req, res) => {
     const {idGame } = req.params;
@@ -43,7 +43,7 @@ router.get('/:idGame', async(req, res) => {
 });
 
 
-//--------ROUTER----POST-------//
+//--------ROUTER----POST---VIDEOGAME-------//
 router.post('/', async(req, res) => {
     try {
         const { name, genres, description, released, rating, plataforms, image } = req.body;

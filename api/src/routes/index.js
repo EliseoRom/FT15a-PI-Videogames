@@ -15,7 +15,12 @@ router.use("/videogames", videogamesRoutes);
 router.use("/videogame", videogameRoutes);
 
 router.get('/', (_req, res) => {
-    return res.send('Todo esta en orden')
+    return res.send('Todo esta en orden!!! Segui codeando nomas...')
+});
+
+
+router.get('/genres', (_req, res) => {
+    return res.send('Esta es la ruta genres dale nomasssssssssssssssssssss')
 });
 
 module.exports = router;
