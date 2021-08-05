@@ -19,13 +19,15 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-const Videogame = require('./src/models/Videogame.js');
-const axios = require('axios').default;
-require("dotenv").config()
+// const Videogame = require('./src/models/Videogame.js');
+// const axios = require('axios').default;
+// require("dotenv").config()
 
-const PORT = process.env.PORT || 3001
+//const PORT = process.env.PORT || 3001
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: true }).then(() => {  
+  // cambiar el force en true se velvan a cargar en la base de datos cada vez que levanto corto el servidor
+  // en false ya quedan cargados en la BD
   console.log('La coneccion con la base de datos si es correcta')
   server.listen(3001, () => {
     console.log('% listening at 3001'); // eslint-disable-line no-console

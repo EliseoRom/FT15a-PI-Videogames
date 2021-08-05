@@ -34,8 +34,8 @@ const { Videogame, Genre } = sequelize.models;
 // Aca vendrian las relaciones de los archivos models
 // Product.hasMany(Reviews);
 
-Videogame.belongsToMany(Genre, { through: 'videogame_genre', timestamps: false });
-Genre.belongsToMany(Videogame, { through: 'videogame_genre', timestamps: false });
+Videogame.belongsToMany(Genre, {through: 'videogame_genre'})
+Genre.belongsToMany(Videogame, {through: 'videogame_genre'})
 
 
 
@@ -43,6 +43,7 @@ module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize,     // para importart la conexión { conn } = require('./db.js');
 };
+
 /* 
 tener nuestro propios generos
 union entre el cliente y el servidor

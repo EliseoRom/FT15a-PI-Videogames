@@ -1,68 +1,69 @@
-//Renderizar la ruta id, y la ruta post
-
-const { Videogame, Genre } = require('../db');
-const router = require('express').Router();
-const axios = require('axios').default;
-const { v4: uuidv4 } = require('uuid');
-
-// ------- ROUTER-----GET----VIDEOGAME-----//
-
-router.get('/:idgame', async(req, res) => {
-    const {idGame } = req.params;
-    try {
-        let isLocal = idGame.slice(0, 5)
-        if(isLocal == 'local') {
-            Videogame.findByPk(idGame, {
-                include: {
-                    model: Genre,
-                    attributes: ['id', 'name'],
-                    though: { attributes:[] }
-                }
-            })
-            .then(game => {
-                return game ? res.json(game) : res.sendStatus(404);
-            })
-            .catch(err => res.status(500).send({ error: err }));
-        }
-        let callApi = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
-        let externalGame = await callApi.data;
-
-        externalGame = await externalGame && {
-            id: externalGame.id,
-            name: externalGame.name,
-            description: externalGame.description,
-            dateToRelase: externalGame.released,
-            image: externalGame.background_image,
-            rating: externalGame.rating,
-            platforms: externalGame.platforms,
-            genres: externalGame.genres,
-            local: false
-        };
-
-    } catch {
-        return res.status(404);
-    };
-});
+// Renderizar la ruta id, y la ruta post
+// const { Router } = require('express');
+// const { Videogame, Genre } = require('../db');
+// const router = Router();
+// const axios = require('axios');
+// const { v4: uuidv4 } = require('uuid');
+// const { API_KEY } = process.env;
 
 
-//--------ROUTER----POST---VIDEOGAME-------//
-router.post('/', async(req, res) => {
-    try {
-        const { name, genres, description, released, rating, plataforms, image } = req.body;
-        const id = "local" + uuidv4();
-        const newvideoGame = {id, name, description, released, rating, plataforms, image, local: true};
-        const createGame = await Videogame.create(newvideoGame);
+// // ------- ROUTER-----GET----VIDEOGAME-----//
 
-         // create game
-         genres.forEach( async (genre) => {
-             let genreDb = await Genre.findByPk(genre)
-             createGame.setGenres(genreDb);
-         });
-         return res.send(createGame);
-    } catch (err) {
-        console.log(err)
-    }
-});
+// GET /videogame/:idVideoGame
+// router.get('/videogame/:idVideogame', async (req, res) => {
+//     const { idVideogame } = req.params
+//     if (idVideogame.includes('-')) {
+//         let videogameDb = await Videogame.findOne({
+//             where: {
+//                 id: idVideogame,
+//             },
+//             include: Genre
+//         })
+//         videogameDb = JSON.stringify(videogameDb);
+//         videogameDb = JSON.parse(videogameDb);
+//         videogameDb.genres = videogameDb.genres.map(g => g.name);
+//         res.json(videogameDb)
+//     };
 
+//     try {
+//         const response = await axios.get(`https://api.rawg.io/api/games/${idVideogame}?key=${API_KEY}`);
+//         let { name, background_image, genres, description, released: releaseDate, rating, platforms } = response.data;
+//         genres = genres.map(g => g.name);
+//         platforms = platforms.map(p => p.platform.name);
+//         return res.json({
+//             name,
+//             background_image,
+//             genres,
+//             description,
+//             releaseDate,   // forma de acceder a la informacion
+//             rating,
+//             platforms
+//         })
+//     } catch (err) {
+//         return console.log(err)
+//     }
+// })
 
-module.exports = router;
+// router.post('/videogame', async (req, res) => {
+//     // me traigo todas las caracteristicas del body
+//     let { name, description, releaseDate, rating, genres, platforms, image } = req.body; //  image
+//     platforms = platforms.join(', ')
+//     try {
+//         const gameCreated = await Videogame.findOrCreate({
+//             where: { 
+//                 name,
+//                 description,
+//                 releaseDate,
+//                 rating,
+//                 platforms,
+//                 image
+//             }
+//         })
+//         await gameCreated[0].setGenres(genres);
+//     } catch (err) {
+//         console.log(err);
+//     }
+//     res.send('Fue creado correctamente')
+// })
+
+// module.exports = router;
