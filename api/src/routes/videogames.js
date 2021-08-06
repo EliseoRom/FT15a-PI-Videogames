@@ -2,12 +2,12 @@ const { Videogame, Genre } = require("../db");
 const router = require("express").Router();
 const axios = require("axios");
 const { API_KEY } = process.env;
-
 require('dotenv').config();
 
-
+// Me trae  todos los juegos y tambien los games por nombre 
+//  http://localhost:3001/videogames?name=dog 
 // GET a '/videogames
-router.get('/videogames', async (req, res) => {
+router.get('/', async (req, res) => {
     let videogamesDb = await Videogame.findAll({
         include: Genre
     });
@@ -60,4 +60,4 @@ router.get('/videogames', async (req, res) => {
 })
 
 
-module.exports = router;
+ module.exports = router;
