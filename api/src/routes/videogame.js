@@ -6,7 +6,8 @@ const axios = require('axios');
 const { v4: uuidv4 } = require('uuid');
 const { API_KEY } = process.env;
 
-
+// Traigo lo juegos por ID 
+// http://localhost:3001/videogame/1
 // GET /videogame/:idVideoGame
 router.get('/:idVideogame', async (req, res) => {
     const { idVideogame } = req.params

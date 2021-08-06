@@ -5,6 +5,7 @@ const { API_KEY } = process.env;
 require('dotenv').config();
 
 // Me trae  todos los juegos y tambien los games por nombre 
+//  http://localhost:3001/videogames
 //  http://localhost:3001/videogames?name=dog 
 // GET a '/videogames
 router.get('/', async (req, res) => {
@@ -24,7 +25,7 @@ router.get('/', async (req, res) => {
     if (req.query.name) {
         try {
             let response = await axios.get(`https://api.rawg.io/api/games?search=${req.query.name}&key=${API_KEY}`);
-            if (!response.data.count) return res.status(404).send(`No se encontro ningun videojuego con el nombre "${req.query.name}"`);
+            if (!response.data.count) return res.status(404).send(`No se encontro ningun videojuego con ese nombre "${req.query.name}"`);
             response.data.results = response.data.results.reduce((acc, el) => acc.concat({
                 ...el,
                 genres: el.genres.map(g => g.name)
