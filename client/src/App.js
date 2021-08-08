@@ -1,5 +1,8 @@
 import './App.css';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom'
+import React from 'react';
+// import Nav from './components/navbar.jsx'
+
 
 function App() {
   return (
