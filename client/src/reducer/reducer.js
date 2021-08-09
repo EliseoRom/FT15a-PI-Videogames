@@ -1,4 +1,4 @@
-import { GET_VIDEOGAMES, SEARCH_BY_NAME, GET_VIDEOGAME_DETAIL, FILTER_BY_NAME } from '../actions/actions';
+import { GET_VIDEOGAMES, SEARCH_BY_NAME, GET_VIDEOGAME_DETAIL, FILTER_BY_NAME, FILTER_BY_GENRES } from '../actions/actions';
 // declaro 
 const initialState = {
     videogames: undefined,
@@ -27,6 +27,14 @@ function rootReducer (state = initialState, action) {
         return {
             ...state,
             videogames: state.copyVideogames.filter(e => e.name.toLowerCase().includes(action.payload.toLowerCase()) )
+        }
+    }
+    case FILTER_BY_GENRES: {
+        if(!action.payload) 
+        return { ...state,
+             videogames: state.copyVideogames};
+        return { ...state,
+            videogames: state.copyVideogames.filter(e => e.genres.includes(action.payload))
         }
     }
     default: return state;

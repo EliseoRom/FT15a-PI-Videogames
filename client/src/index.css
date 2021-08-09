@@ -1,5 +1,10 @@
 body {
-  background: url('http://images2.fanpop.com/images/photos/5600000/l2-l2-dark-elves-5621486-1024-768.jpg');
+  height: 100vh;
+  width: 100vw;
+  background: url('https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2019/11/nacon-asymmetric.jpeg');
+    background-size: cover;
+    background-position: center ;
+    position: center;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
