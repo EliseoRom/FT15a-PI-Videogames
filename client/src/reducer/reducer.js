@@ -1,9 +1,9 @@
 import { GET_VIDEOGAMES, SEARCH_BY_NAME, GET_VIDEOGAME_DETAIL, FILTER_BY_NAME, FILTER_BY_GENRES } from '../actions/actions';
 // declaro 
 const initialState = {
-    videogames: undefined,
-    copyVideogames: undefined,
-    videogameDetail: undefined
+    videogames: [],
+    copyVideogames: [],
+    videogameDetail: []
 }
 
 function rootReducer (state = initialState, action) {
@@ -37,7 +37,7 @@ function rootReducer (state = initialState, action) {
             videogames: state.copyVideogames.filter(e => e.genres.includes(action.payload))
         }
     }
-    default: return state;
+    default: return {...state};
  }
 }
 

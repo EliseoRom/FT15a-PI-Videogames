@@ -1,0 +1,30 @@
+.contenedor{
+    border: solid 2px ;
+    width:400px;
+    padding:10px;
+    margin:20px;
+    background-color:transparent;
+    opacity:100%;
+    border-radius: 25px;
+    }
+
+.colm {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+        }
+        .colm2{
+            margin: 10px;
+        }
+.boton{
+    float:right;
+    font-size:10px;
+    border-radius: 5px;
+    color: rgb(197, 9, 9);
+    background-color: transparent;
+    
+}
+.boton:hover{
+    background-color: rgb(165, 155, 22);
+}
