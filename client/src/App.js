@@ -10,12 +10,11 @@ import NavBar from './components/NavBar/NavBar'
 function App() {
   return (
     <BrowserRouter>
-    <Route exact path="/videogames" component={Card} />
     <Route exact path="/" component={ LandingPage }  />
-    <Route exact path="/createVideogame" component={ ''} />
-    <Route exact path="/videogames/:id" component={''} />
+    <Route exact path="/videogames" component={Card} />
     <NavBar path="/videogames" component= {NavBar}  />
-   
+    <Route exact path="/videogames/:id" component={''} />
+    <Route exact path="/createVideogame" component={ '' } />
    
     </BrowserRouter>
   );

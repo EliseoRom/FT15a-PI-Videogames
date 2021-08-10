@@ -6,12 +6,15 @@ export default function NavBar() {
     return ( // de HW modificar
         <header className="navbar">
             <div>
-                <img id="" src={''} width="30" height="30" className="d-inline-block align-top" alt="" />
+                <img id="" src={'https://us.123rf.com/450wm/soifer/soifer1806/soifer180600033/103260319-vector-de-letrero-de-ne%C3%B3n-de-gamepad-y-smartphone-juegos-para-logotipo-de-tel%C3%A9fono-inteligente-emble.jpg?ver=6'} 
+                width="100" 
+                height="100" 
+                className="d-inline-block align-top" alt="" />
             </div>
             <nav>
                 <ul className="list">
                     <li className="list-item">
-                        <NavLink exact to="/" >Home</NavLink>
+                        <NavLink exact to="/videogames" > Ingresar </NavLink>
                         <NavLink to="/favs" >Favoritos</NavLink>
                     </li>
                 </ul>
