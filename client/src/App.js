@@ -1,24 +1,34 @@
 import './App.css';
-import {BrowserRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import React from 'react';
-// import Nav from './components/navbar.jsx'
 import Card from './components/Card/Card';
 import LandingPage from './components/LandingPage/LandingPage';
 import NavBar from './components/NavBar/NavBar'
-
+//import CreateGame from './components/CreateGame'
 
 function App() {
   return (
     <BrowserRouter>
-    <Route exact path="/" component={ LandingPage }  />
-    <Route exact path="/videogames" component={Card} />
+    <Switch>
+    <Route exact path="/" component={ LandingPage } />
+   </Switch>
     <NavBar path="/videogames" component= {NavBar}  />
+    <Route exact path="/videogames" component={Card} />
     <Route exact path="/videogames/:id" component={''} />
-    <Route exact path="/createVideogame" component={ '' } />
-   
+    <Route exact path="/createVideogame" component={ 'CreateGame' } />
     </BrowserRouter>
   );
   
 }
 
 export default App;
+    // <BrowserRouter>
+    //     <Route exact path="/" component={LandingPage} />
+
+    //    <NavBar path="/home" component={NavBar} />
+    //   <Switch>
+    //     <Route path='/home' component={ Card }/>
+    //     <Route exact path="/videogames/:id" component={""} />
+    //     <Route exact path="/createVideogame" component={"CreateGame"} />
+    //   </Switch>
+    // </BrowserRouter>

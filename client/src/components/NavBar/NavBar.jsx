@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 // import Logo from '../../logoHenry.png'
-import './NavBar.css';
+import './NavBar.module.css';
 export default function NavBar() {
     return ( // de HW modificar
         <header className="navbar">
@@ -12,10 +12,11 @@ export default function NavBar() {
                 className="d-inline-block align-top" alt="" />
             </div>
             <nav>
-                <ul className="list">
+                 <ul className="list">
                     <li className="list-item">
-                        <NavLink exact to="/videogames" > Ingresar </NavLink>
-                        <NavLink to="/favs" >Favoritos</NavLink>
+                        <NavLink exact to="/videogames" > Home </NavLink>
+            
+                        <NavLink to="/createVideogame" > Crear Game</NavLink>
                     </li>
                 </ul>
             </nav>

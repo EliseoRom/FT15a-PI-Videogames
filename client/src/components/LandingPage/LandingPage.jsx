@@ -1,13 +1,17 @@
 import React from 'react';
-//import {Link} from 'react-router-dom';
-//import style from './LandinPage.css'
+import style from './Landing.module.css';
+import { Link } from 'react-router-dom';
 
+
+// Pagina de inicio / me lleva a mi home llamado /videogames
 export default function LandinPage() {
     return (
-        <div>
-            <h1> Bienvenidos a mi pagina de Video Games </h1>
-            <h1> '' </h1>
-            <h1> '' </h1>
+        <div className={style.s}>
+            <div className={style.info}>
+                <Link to='/videogames'>
+                    <button className={style.boton}>START</button>
+                </Link>
+            </div>
         </div>
         
 

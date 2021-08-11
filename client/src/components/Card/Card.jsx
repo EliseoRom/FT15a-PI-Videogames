@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 //import {GET_VIDEOGAMES} from '../../actions/actions'
-import './Card.css';
+import './Card.module.css';
 // <div> HOLIS SOY CARD </div>;
 
 export default function Card() {
