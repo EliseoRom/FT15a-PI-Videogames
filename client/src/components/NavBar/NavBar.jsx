@@ -14,9 +14,10 @@ export default function NavBar() {
             <nav>
                  <ul className="list">
                     <li className="list-item">
-                        <NavLink exact to="/videogames" > Home </NavLink>
+                        <NavLink exact to="/" > Inicio </NavLink>
+                        <NavLink exact to="/videogames" > Recharge </NavLink>
             
-                        <NavLink to="/createVideogame" > Crear Game</NavLink>
+                        <NavLink to="/createVideogame" > Create Game</NavLink>
                     </li>
                 </ul>
             </nav>

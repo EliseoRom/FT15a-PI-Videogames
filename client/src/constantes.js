@@ -1,5 +1,5 @@
-export const BASE_URL = "http://localhost:3001/home";
-export const GET_VIDEOGAMES = BASE_URL + '/home';
+export const BASE_URL = "http://localhost:3001/videogames";
+export const GET_VIDEOGAMES = BASE_URL + '/videogames';
 
 // export const FILTER_BY_GENRES = 'FILTER_BY_GENRES'
 // export const GET_VIDEOGAMES = 'GET_VIDEOGAMES';

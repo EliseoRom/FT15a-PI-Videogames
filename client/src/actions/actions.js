@@ -1,11 +1,16 @@
 import axios from 'axios';
+// import { GET_VIDEOGAMES } from '.././constantes'
 
-// ACTION CREATORS
+// ----------ACTION CREATORS--------------//
+//Conecto el Front con el Back
 export function getVideoGames() {
     return function(dispatch) {
         return axios.get ('http://localhost:3001/videogames')
         .then((response) => {
-            dispatch({ type: 'GET_VIDEOGAMES', payload: response.data});
+            dispatch({ 
+                type: 'GET_VIDEOGAMES',
+                 payload: response.data
+            });
             
         })
     }

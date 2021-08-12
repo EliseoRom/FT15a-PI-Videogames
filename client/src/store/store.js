@@ -1,6 +1,5 @@
 import { createStore, applyMiddleware } from "redux";
 import {composeWithDevTools} from 'redux-devtools-extension';
-
 import thunk from "redux-thunk";
 import rootReducer from '../Reducer/reducer';
 
@@ -12,8 +11,6 @@ export const store = createStore(
   // extencion de Redux para ver los cambios en la app
 ;
 
-// import { createStore, applyMiddleware } from "redux";
-// import thunk from "redux-thunk";
 
 
-// export default store;
+export default store;
