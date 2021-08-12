@@ -36,3 +36,30 @@
 .boton:hover{
   color:rgb(0, 38, 255);
 }
+.contenido {
+	background-color: rgb(110, 110, 110);
+	
+	margin:1px;
+	padding: 30px;
+	flex: 5 5;
+}
+.flex .contenido:first-child {
+	flex: 5 5;
+}
+
+
+.contenido p {
+	font-size: 80px;
+	color: rgb(119, 171, 201);
+	text-align: center;
+}
+.contenido h3 {
+	font-size: 45px;
+	color: rgb(96, 123, 197);
+	text-align: center;
+}
+.contenido h4 {
+	font-size: 80px;
+	color: rgb(83, 105, 201);
+	text-align: center;
+}

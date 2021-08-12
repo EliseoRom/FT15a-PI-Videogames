@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import Logo from '../../logoHenry.png'
-import './NavBar.module.css';
+import navBar from './NavBar.module.css';
+
+
 export default function NavBar() {
     return ( // de HW modificar
         <header className="navbar">
@@ -16,8 +17,8 @@ export default function NavBar() {
                     <li className="list-item">
                         <NavLink exact to="/" > Inicio </NavLink>
                         <NavLink exact to="/videogames" > Recharge </NavLink>
-            
-                        <NavLink to="/createVideogame" > Create Game</NavLink>
+                        <div className={navBar.navBar}> </div>
+                        <NavLink exact to="/createVideogame" > Create Game</NavLink>
                     </li>
                 </ul>
             </nav>

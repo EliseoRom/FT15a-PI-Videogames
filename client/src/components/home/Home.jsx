@@ -1,21 +1,21 @@
 import React from "react";
-import { connect, useSelector } from "react-redux";
+import { connect } from "react-redux";
 import { useEffect } from "react";
-//import axios from "axios"; useState,
 import { getVideoGames } from "../../actions/actions";
-import style from "./Home.module.css";
+//import style from "./Home.module.css";
 //import {useState, useEffect} from 'react';
 //import {connect, useDispatch, useSelector} from 'react-redux';
 //import Navbar from "../NavBar/NavBar";
-import Card from "../Card/Card";
-import { Fragment } from "react";
-import {Link} from 'react-router-dom';
+// import Card from "../Card/Card";
+// import { Fragment } from "react";
+// import {Link} from 'react-router-dom';
 
 // --------->  <p>{videogames.platforms}</p>
-// render home game
+// Render home game
+// TENGO QUE MOSTRAR NOMBRE GENERO E IMAGEN
 function Home({ getVideoGames, videogames }) {
   //const dispatch = useDispatch();
- const allVideogame = useSelector ((state) => state.videogame)
+ 
   useEffect(() => {
     getVideoGames();
   }, [getVideoGames]);
@@ -27,7 +27,19 @@ function Home({ getVideoGames, videogames }) {
       {videogames.map((videogame) => {
         return (
           <div>
+            <p>{videogame.name}</p>{" "}
+            <div>
+              <p>{videogame.genre}</p>
+            </div>
+            <div>
+             
+            </div>
+
+            
+        <img  src={videogame.background_image}  alt="holaaaaaaaaaa" width="330px" height="170px" />
+            
             <select>
+        
               <option value="asc"> Ascendente </option>
               <option value="desc"> Descentente </option>
             </select>
@@ -57,37 +69,13 @@ function Home({ getVideoGames, videogames }) {
                 <option value='created'>Creados</option>
                 <option value='api'>Existente</option>
             </select>
-            {
-            allVideogame?.map((c) => {
-              return (
-             <Fragment>
-                 <Link to={"/videogames" + c.id}>
-                      <Card name={c.name} genre={c.genre} image={c.image} key={c.id} />
-                    </Link>
-            </Fragment>
-           );
-            })}
-
-            <p>{videogame.name}</p>{" "}
-            <div>
-              <p>{videogame.genre}</p>
-            </div>
-            <div>
-             
-            </div>
-            <div className={style.info}> </div>
-            <img
-              src={videogame.background_image}
-              alt=""
-              width="330px"
-              height="150px"
-            />
+            
           </div>
         );
       })}
     </div>
   );
-} // function HOME
+} //  finish function HOME
 
 function mapStateToProps(state) {
   return {
