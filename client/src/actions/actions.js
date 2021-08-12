@@ -36,8 +36,14 @@ export function filterByGenres(genres) {
     return { type: FILTER_BY_GENRES, payload: genres};
 
 }
-
-export const FILTER_BY_GENRES = 'FILTER_BY_GENRES'
+export function byStatus(payload) {
+    return {
+        type: STATUS,
+        payload
+    };
+};
+export const STATUS = 'STATUS';
+export const FILTER_BY_GENRES = 'FILTER_BY_GENRES';
 export const GET_VIDEOGAMES = 'GET_VIDEOGAMES';
 export const GET_VIDEOGAMES_DETAIL = 'GET_VIDEOGAMES_DETAIL';
 export const FILTER_BY_NAME = 'FILTER_BY_NAME';

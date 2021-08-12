@@ -10,3 +10,20 @@ export default function Card({ name, genre, image}) {
         </div>
     )
 };
+
+
+// RENDERIZADO QUE DEVERIA IR EN HOME PERO NO LO TOMA 
+
+
+
+// const allVideogame = useSelector ((state) => state.videogame)
+// {
+//     allVideogame?.map((c) => {
+//       return (
+//      <Fragment>
+//          <Link to={"/videogames" + c.id}>
+//               <Card name={c.name} genre={c.genre} image={c.image} key={c.id} />
+//             </Link>
+//     </Fragment>
+//    );
+//     })}

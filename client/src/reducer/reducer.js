@@ -33,12 +33,22 @@ function rootReducer (state = initialState, action) {
         if(!action.payload) 
         return { ...state,
              videogames: state.copyVideogames};
-        return { ...state,
+             return { ...state,
             videogames: state.copyVideogames.filter(e => e.genres.includes(action.payload))
         }
     }
     default: return {...state};
- }
+};
 }
 
 export default rootReducer;
+
+
+// case STATUS:
+//         const allCharacters = state.allCharacters;
+//         const statusFilter = action.payload === 'All' ? allCharacters :
+//         allCharacters.filter(i => i.status === action.payload)
+//         return {
+//             ...state,
+//             characters: statusFilter
+//         }  
