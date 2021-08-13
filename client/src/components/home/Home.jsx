@@ -15,7 +15,7 @@ import Paginado from "./Paginado";
 // Render home game
 // TENGO QUE MOSTRAR NOMBRE GENERO E IMAGEN
 function Home() {
-  //---PAGINADO----//
+           //---PAGINADO----//
 
   const dispatch = useDispatch();
   const allVideo = useSelector((state) => state.videogames);
@@ -25,15 +25,17 @@ function Home() {
   const indexLastCharacter = currentPage * charactersPerPage; // el ultimo indice (posittion) el game que renderizo
   const indexFirstCharacter = indexLastCharacter - charactersPerPage; // resto los caracteres qe muetro por pagina  9
   const currentCharacters = allVideo.slice(
+    //esta const me guarda cuales son los games que tengo que renderizar dependiendo de la pagina
+    // el indice del primer game y ultimo 
     indexFirstCharacter,
     indexLastCharacter
   );
-
+   // seteo la pagina en
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  //--------------Home-------------------//
+  //--------------Home------- ------------//
   useEffect(() => {
     dispatch(getVideoGames());
   }, [dispatch]);
@@ -85,10 +87,12 @@ function Home() {
         return (
           
           <div>
-            <p>{videogame.name}</p>
-            <div>
-              <p>{videogame.plataform}</p>
-            </div>
+               <p>{videogame.name}</p>
+               <p>{videogame.genres}</p>
+               
+             <div>
+
+             </div>
             <img
               src={videogame.background_image}
               alt="holaaa no se muestra esto"

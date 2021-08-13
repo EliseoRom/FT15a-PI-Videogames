@@ -5,7 +5,7 @@ export default function Paginado ({charactersPerPage, allCharacters, paginado}){
     const pageNumbers = []
 
     for (let i=1; i<=Math.ceil(allCharacters/charactersPerPage); i++) {
-        pageNumbers.push(i) // para que el pagino comience en la pagina 1
+        pageNumbers.push(i) // para que la pagina comience en  1 let i=1
     }
     return(
         <nav>
