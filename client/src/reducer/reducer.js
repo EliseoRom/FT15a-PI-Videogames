@@ -37,10 +37,10 @@ function rootReducer (state = initialState, action, payload) {
     }  
     // aca 1  FILTER GENRES
     case FILTER_BY_GENRES: {
-        if (payload === "All games") return {...state, copyVideogames: null}
+        // if (payload === "All games") return {...state, copyVideogames: null}
         return {
             ...state,
-            copyVideogames: state.videogames.filter(e => e.genres.map((genre) => (genre.name)).includes(payload))
+            genres: state.videogames.filter(e => e.genres.map((genre) => (genre.name)).includes(payload))
         }
     } 
     // aca 2 ORIGIN

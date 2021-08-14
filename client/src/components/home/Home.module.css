@@ -1,12 +1,10 @@
 .s{
-   background-image: url('../../jpg/8.jpg');
-   position:fixed;
-   width: 100%;
-   height: 100%;
-   margin:0;
-   background-position: center center;
-   background-size:cover;
-   background-attachment: fixed;
+  /* background-image: url('https://www.game.de/wp-content/uploads/2020/09/iStock-1050763638.jpg');*/
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    display:flex;
+     align-items: center;
    
    
 }
@@ -14,7 +12,7 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   color:blue
+   color:rgb(31, 31, 61)
 }
 
 .boton {

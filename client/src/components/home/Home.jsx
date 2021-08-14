@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { getVideoGames, filterByGenres, filterOrigin, filterName } from "../../actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 import Paginado from "./Paginado";
-
+import style from "./Home.module.css";
+import Search from "../Search/Search";
 //import { connect} from "react-redux";
-//import style from "./Home.module.css";
 //import {useState, useEffect} from 'react';
 //import Navbar from "../NavBar/NavBar";
 // import Card from "../Card/Card";
@@ -62,8 +62,10 @@ function handleFilterName(e) {
 
 
   return (
-    <div>
+    <div className={style.s}>
+      <div className={style.info}></div>
       <h1> GAME COLLECTION </h1>
+                         <Search/>
                          <span>Order Name </span>
       <select id="order" onChange={(e) => handleFilterName(e)}> 
                 

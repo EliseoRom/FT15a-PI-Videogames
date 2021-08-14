@@ -17,18 +17,30 @@ export function getVideoGames() {
     }
 } //  search name function
 export function searchByName(name) {
-    return async function (dispatch) {
-        const response = await axios.get(`http://localhost:3001/videogames?name=${name}`);
-        dispatch({ type: 'SEARCH_BY_NAME', payload: response.data });
-
-    }
+    return  function (dispatch) {
+       return axios.get(`http://localhost:3001/videogames?name=${name}`)
+       .then((response) => {
+         dispatch({
+             type:'SEARCH_BY_NAME', 
+             payload: response.data,
+         })
+    })}
 } // detalles game nueva /ruta
-export function getVideogameDetail(id) {
-    return async function (dispatch) {
-        const response = await axios.get(`http://localhost:3001/videogame/${id}`); 
-        dispatch({ type: GET_VIDEOGAME_DETAIL, payload: response.data });  // sino funciona sacar data
-    }
-}  
+// export function getVideogameDetail(id) {
+//     return async function (dispatch) {
+//         const response = await axios.get(`http://localhost:3001/videogame/${id}`); 
+//         dispatch({ type: GET_VIDEOGAME_DETAIL, payload: response.data });  // sino funciona sacar data
+//     }
+// }   // con async await // con promesas 
+export function videogameDetail(id){
+    return function (dispatch) {
+        return fetch("http://localhost:3001/videogamei="+id)
+        .then(response => response.json())
+        .then(json => {
+            dispatch({type:"GET_VIDEOGAME_DETAIL", payload:json})
+        });
+    };
+}
 //  aca 1        filtrado x  genre o genres
 export function filterByGenres(genres) {
     return { type: 'FILTER_BY_GENRES', payload: genres };
