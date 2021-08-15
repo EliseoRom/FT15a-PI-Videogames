@@ -4,7 +4,8 @@ import { getVideoGames, filterByGenres, filterOrigin, filterName } from "../../a
 import { useDispatch, useSelector } from "react-redux";
 import Paginado from "./Paginado";
 import style from "./Home.module.css";
-import Search from "../Search/Search";
+//import Search from "../Search/Search";
+import { Link } from "react-router-dom";
 //import { connect} from "react-redux";
 //import {useState, useEffect} from 'react';
 //import Navbar from "../NavBar/NavBar";
@@ -65,7 +66,7 @@ function handleFilterName(e) {
     <div className={style.s}>
       <div className={style.info}></div>
       <h1> GAME COLLECTION </h1>
-                         <Search/>
+                        
                          <span>Order Name </span>
       <select id="order" onChange={(e) => handleFilterName(e)}> 
                 
@@ -125,20 +126,22 @@ function handleFilterName(e) {
 
       {currentCharacters.map((videogame) => {
         return (
-          
           <div>
+                 <Link to={`/videogames/${videogame.id}`}>
+                  <p>more details...</p>
+                  </Link>
                <p>{videogame.name}</p>
                <p>{videogame.genres}</p>
                
              <div>
 
              </div>
-            <img
+             <img
               src={videogame.background_image}
               alt="holaaa no se muestra esto"
-              width="330px"
+              width="300px"
               height="170px"
-            ></img>
+             ></img>
             
           </div>
         );

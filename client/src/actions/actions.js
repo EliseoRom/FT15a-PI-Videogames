@@ -30,11 +30,11 @@ export function searchByName(name) {
 //     return async function (dispatch) {
 //         const response = await axios.get(`http://localhost:3001/videogame/${id}`); 
 //         dispatch({ type: GET_VIDEOGAME_DETAIL, payload: response.data });  // sino funciona sacar data
-//     }
+//     } minuto 14 repaso
 // }   // con async await // con promesas 
-export function videogameDetail(id){
+export function getVideogameDetail(id){
     return function (dispatch) {
-        return fetch("http://localhost:3001/videogamei="+id)
+        return fetch(`http://localhost:3001/videogame/${id}`)
         .then(response => response.json())
         .then(json => {
             dispatch({type:"GET_VIDEOGAME_DETAIL", payload:json})

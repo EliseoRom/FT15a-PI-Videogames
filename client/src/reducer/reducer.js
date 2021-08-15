@@ -31,7 +31,8 @@ function rootReducer (state = initialState, action, payload) {
         copyVideogames: action.payload
     }
     // DETAIL GAME
-    case GET_VIDEOGAME_DETAIL: return {
+    case GET_VIDEOGAME_DETAIL:
+         return {
         ...state,
         videogameDetail: action.payload
     }  

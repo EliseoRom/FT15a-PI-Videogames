@@ -6,6 +6,7 @@ import LandingPage from './components/LandingPage/LandingPage';
 import NavBar from './components/NavBar/NavBar'
 //import CreateGame from './components/CreateGame'
 import Home from './components/Home/Home';
+import GameDetail from './components/GameDetail/GameDetail';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
    </Switch>
     <NavBar path="/videogames" component= {NavBar}  />
     <Route exact path="/videogames" component={ Home } />
-    <Route exact path="/videogames/:id" component={''} />
+    <Route exact path="/videogames/:id"render={({ match }) => <GameDetail id={match.params.id} />}></Route>
     <Route exact path="/createVideogame" component={ 'CreateGame' } />
     </BrowserRouter>
   );
