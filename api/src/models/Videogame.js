@@ -30,6 +30,11 @@ module.exports = (sequelize) => {
     platforms: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
+    // agregar esta columna para el filtro origin
+  //   local: {
+  //     type: DataTypes.BOOLEAN,
+  //     allowNull: true
+  // }
   });
 };

@@ -4,8 +4,10 @@ require('dotenv').config();
 const { API_KEY } = process.env;
 const { Router } = require('express');
 const router = Router();
-const axios = require('axios').default; 
+const axios = require('axios').default;
 
+
+//http://localhost:3001/genres
 //GET a /genres
 router.get('/', async (req, res) => {
     const genresDb = await Genre.findAll();

@@ -43,29 +43,51 @@ router.get('/:idVideogame', async (req, res) => {
     }
 })
 
+
 //POST a /videogame
-router.post('/', async (req, res) => {
-    // me traigo todas las caracteristicas del body
-    const { name, description, releaseDate, rating, genres, platforms, image } = req.body; //  image
+router.post('/createVideogame', async (req, res) => {
+    let { name, description, releaseDate, rating, genres, platforms, image } = req.body;
+    console.log(req.body)
     platforms = platforms.join(', ')
     try {
         const gameCreated = await Videogame.findOrCreate({
             where: {
-                id: uuidv4(),
-                name: name,
-                description: description,
-                releaseDate: releaseDate,
-                rating: rating,
-                platforms: platforms,
-                image:  image
+                name,
+                description,
+                releaseDate,
+                rating,
+                platforms,
+                image
             }
         })
         await gameCreated[0].setGenres(genres);
     } catch (err) {
         console.log(err);
     }
-    res.send('Fue creado correctamente')
+    res.send('Fue creado')
 })
+// router.post('/', async (req, res) => {
+//     // me traigo todas las caracteristicas del body
+//     const { name, description, releaseDate, rating, genres, platforms, image } = req.body; //  image
+//     platforms = platforms.join(', ')
+//     try {
+//         const gameCreated = await Videogame.findOrCreate({
+//             where: {
+//                 id: uuidv4(),
+//                 name: name,
+//                 description: description,
+//                 releaseDate: releaseDate,
+//                 rating: rating,
+//                 platforms: platforms,
+//                 image:  image
+//             }
+//         })
+//         await gameCreated[0].setGenres(genres);
+//     } catch (err) {
+//         console.log(err);
+//     }
+//     res.send('Fue creado correctamente')
+// })
 
 
  module.exports = router;
