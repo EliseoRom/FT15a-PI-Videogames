@@ -1,10 +1,13 @@
 .s{
-  /* background-image: url('https://www.game.de/wp-content/uploads/2020/09/iStock-1050763638.jpg');*/
+    background-image: url('');
     flex-direction:row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     display:flex;
      align-items: center;
+     background: linear-gradient(rgb(10, 10, 50), rgb(248, 248, 248), rgb(170, 170, 170), #fafafa, #464646, #ffffff, #363636);
+     
+
    
    
 }

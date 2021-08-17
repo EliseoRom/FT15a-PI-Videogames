@@ -1,5 +1,5 @@
-.gamedetail {
-    background-image: url('');
+.body4 {
+    background-image: url('../../jpg/9.jpg');
     padding-left: 0;
     padding-right: 0;
     height: 100%;
@@ -9,38 +9,74 @@
     background-repeat: no-repeat;
     position:absolute;
     text-align:center;
+    font-weight: 50;
 }
 
-.wrapper {
-    height: 578px;
-    text-align: center;
-    padding-top: 10px;
-}
-
-.container {
-    background: rgba(255, 255, 255, 0.4);;
+/* border-radius: 2%;
+    background: rgba(255, 255, 255, 0.4);
     margin: auto;
-    width: 800px;
-    height: 590px;
-    border-radius: 10%;
+    height: 700px;
+    width: 500px; */
+
+.containerdetail {
+  font-family: arial black;
+  border-radius: 2%;
+  box-shadow: 0 0 1em 0 rgba(51, 51, 51, 0.25);
+  
+  max-width: 800px;
+
+  padding: 1.5em;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  z-index: 1;
+  width: 80%;
+  height: 85vh;
 }
-.name {
-    font-family: 'Press Start 2P';
-    font-size: 12px;
-    padding-top: 5px;
+.containerdetail:before {
+  
+  background-size: cover;
+  content: "";
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 90vw;
 }
-.description {
-    font-size: 12px;
-    font-weight:500 ;
-}
-.image {
-    width: 300px;    
-    height: 200px;
-    border-radius: 5%;
+.containerdetail:after {
+  background: rgba(255, 255, 255, 0.4);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  border-radius: 2%;
 }
 
-.genres {
-    display:inline-block;
-    margin-right:50px;
-    margin-left:50px;
+.image {
+  border-radius: 15px;
+}
+
+.buttonback {
+  cursor: pointer;
+  width: 14%;
+  border-radius: 30%;
+  margin-left: 2vh;
+  padding: 10px 20px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: var(list-style-type);
+  box-shadow: 10px 6px 23px 10px rgba(1, 60, 255, 0.53);
 }

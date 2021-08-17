@@ -4,7 +4,7 @@ import React from 'react';
 //import Card from './components/Card/Card';
 import LandingPage from './components/LandingPage/LandingPage';
 import NavBar from './components/NavBar/NavBar'
-//import CreateGame from './components/CreateGame'
+import CreateGame from './components/CreateGame/CreateGame'
 import Home from './components/Home/Home';
 import GameDetail from './components/GameDetail/GameDetail';
 
@@ -17,7 +17,7 @@ function App() {
     <NavBar path="/videogames" component= {NavBar}  />
     <Route exact path="/videogames" component={ Home } />
     <Route exact path="/videogames/:id"render={({ match }) => <GameDetail id={match.params.id} />}></Route>
-    <Route exact path="/createVideogame" component={ 'CreateGame' } />
+    <Route exact path="/createVideogame" component={CreateGame} />
     </BrowserRouter>
   );
   

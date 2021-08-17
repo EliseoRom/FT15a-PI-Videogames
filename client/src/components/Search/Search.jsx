@@ -2,7 +2,7 @@ import React, {  useState } from "react";
 import { connect } from "react-redux";
 import { searchByName } from "../../actions/actions";
 //import { Link } from 'react-router-dom';
-// import './Buscador.css';
+//import s from "./Search.module.css"
 
 function Search(props){
  const [input, setInput] = useState({name:""});
@@ -11,7 +11,7 @@ function Search(props){
      
      setInput({name: e.target.value})
   }
-   function handleSubmit(e) {
+   function handleSubmit(e) { // boton
       e.preventDefault();
       // lo que tengo en mi estado local le llega mi actions va a llamar al back 
       props.searchByName(input.name);
@@ -20,10 +20,10 @@ function Search(props){
       return (
         <div>
        
-          <form className="form-container" onSubmit={(e) => handleSubmit(e)}>
+          <form className="" onSubmit={(e) => handleSubmit(e)}>
             <div>
               
-              <input
+              <input className=""
                 name="name"
                 type="text"
                 placeholder = "Search game..."

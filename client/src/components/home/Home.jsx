@@ -128,19 +128,16 @@ function handleFilterName(e) {
         return (
           <div>
                  <Link to={`/videogames/${videogame.id}`}>
-                  <p>more details...</p>
+                  <p className="Game-Name">{videogame.name}</p>
+                  
                   </Link>
-               <p>{videogame.name}</p>
+              
                <p>{videogame.genres}</p>
-               
-             <div>
-
-             </div>
-             <img
-              src={videogame.background_image}
-              alt="holaaa no se muestra esto"
-              width="300px"
-              height="170px"
+               <img
+               src={videogame.background_image}
+               alt="holaaa no se muestra esto"
+               width="300px"
+               height="170px"
              ></img>
             
           </div>

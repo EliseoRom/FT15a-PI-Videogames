@@ -45,7 +45,7 @@ router.get('/:idVideogame', async (req, res) => {
 
 
 //POST a /videogame
-router.post('/createVideogame', async (req, res) => {
+router.post('/videogame', async (req, res) => {
     let { name, description, releaseDate, rating, genres, platforms, image } = req.body;
     console.log(req.body)
     platforms = platforms.join(', ')

@@ -57,14 +57,28 @@ export function filterName(order) {
 } // aca 4 Raiting 
 export function sortByRating(order) {
     return { type: 'BY_RATING', payload: order };
-}
+} // POST CREATE GAME
+// export function postGame(payload) {
+//     return async function(dispatch) {
+//         const post = await axios.get('http://localhost:3001/videogame', payload)
+
+//     }
+// }
+export function postVideogame(payload){ //le paso un payload ya que trae data
+    return async function(dispatch){
+      return await axios.post("http://localhost:3001/videogame" , payload);
+   }
+  }
+
+
+
 //  4  GAME FILTER EXPORT
 export const FILTER_ORIGIN = 'FILTER_ORIGIN';
 export const FILTER_BY_GENRES = 'FILTER_BY_GENRES';
 export const FILTER_NAME = 'FILTER_NAME';
 export const BY_RATING = 'BY_RATING';
 
-
+export const POST_GAME = "POST_GAME";
 export const GET_VIDEOGAMES = 'GET_VIDEOGAMES';
 
 export const SEARCH_BY_NAME = 'SEARCH_BY_NAME';

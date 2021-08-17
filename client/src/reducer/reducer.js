@@ -5,7 +5,9 @@ import {GET_VIDEOGAMES,
         FILTER_NAME, 
         FILTER_BY_GENRES, 
         FILTER_ORIGIN,
-        BY_RATING        } from '../actions/actions';
+        BY_RATING,
+        POST_GAME,   
+       } from '../actions/actions';
 // declaro/ la logica va antes del return
 const initialState = {
     videogames: [],
@@ -75,9 +77,12 @@ function rootReducer (state = initialState, action, payload) {
         return {
              ...state, videogames: [...state.videogames]
              .sort((game1, game2) => game1.rating > game2.rating ? 1 : -1) }
-    }
-     
-
+    } // hacer otro case para raiting
+     // POST NEW GAME
+     case POST_GAME:
+         return {
+          ...state   
+         }
 
 
     default: return {...state};
