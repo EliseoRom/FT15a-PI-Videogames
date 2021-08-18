@@ -1,10 +1,9 @@
 import React,{ useEffect }from "react";
-
 import { Link, useParams } from "react-router-dom";
 import { connect, useDispatch } from 'react-redux';
 import { getVideogameDetail } from "../../actions/actions";
 import s from "./GameDetail.module.css"
-//import Navbar from "../NavBar/NavBar"
+import Navbar from "../NavBar/NavBar"
 
 
  function GameDetail(props) {
@@ -18,6 +17,7 @@ import s from "./GameDetail.module.css"
        
     return (
         <div className={s.body4}>
+          <Navbar/>
            <div className={s.containerdetail}>
                  {props.videogameDetail.length !== 0 ? 
                     <div> 
@@ -29,9 +29,10 @@ import s from "./GameDetail.module.css"
                             <div ><p>Platforms:</p><p>{props.videogameDetail.platforms? props.videogameDetail.platforms :  props.videogameDetail.platforms.map(plat => plat.name).join(', ') }</p></div>
                             <div ><p>Release Date:</p><p>{props.videogameDetail.releaseDate}</p></div>
                             <div ><p>Rating:</p><p>{props.videogameDetail.rating}</p></div>
-                            <div ><p>Description:</p><p>{props.videogameDetail.description}</p></div>
+                            {/* <div ><p>Description:</p><p>{props.videogameDetail.description}</p></div> */}
+                            <p>Description:</p>
+                            <div dangerouslySetInnerHTML={{ __html: props.videogameDetail.description}}></div>
                             </div>
-
                    </div> :
                             <div><h1>Loading game...</h1>
                             <img src="https://i.pinimg.com/originals/1c/d5/80/1cd58046fd5c61ef6ad491edfb1e6093.gif" 
