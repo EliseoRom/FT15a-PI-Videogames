@@ -3,6 +3,7 @@
 //allowNull (es para que si o si tenga el id que le indico) 
 // si lo seteo en false sig que NO permito que este vacio -- si lo seteo en null (si te permito que este vacio)
 const { DataTypes } = require('sequelize');
+//const { values } = require('sequelize/types/lib/operators');
 // Exportamos una funcion que define el modelo
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
@@ -32,9 +33,9 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     // agregar esta columna para el filtro origin
-  //   local: {
-  //     type: DataTypes.BOOLEAN,
-  //     allowNull: true
-  // }
+    db: {
+      type: DataTypes.BOOLEAN,
+      //defaultValue: true,
+  },
   });
 };

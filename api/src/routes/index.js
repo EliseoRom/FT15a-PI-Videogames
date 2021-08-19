@@ -7,12 +7,12 @@ const { Videogame, Genre } = require('../db');
  
 const genreRoute = require('./genres')
 const videogamesRoute = require('./videogames')
-const videogameRoute = require('./videogame')
+const videoRoute = require('./video')
 
 router.use('/genres', genreRoute)
 router.use('/videogames', videogamesRoute)
-router.use('/videogame', videogameRoute)
-
+router.use('/videogame', videoRoute)
+// VIDEO ES POST Y DETAIL
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 

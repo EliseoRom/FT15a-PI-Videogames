@@ -60,5 +60,28 @@ router.get('/', async (req, res) => {
     }
 })
 
+// console.log("hola entre al post")
+//POST CREATE VIDEOGAME modificado
+router.post('/create', async (req, res) => {
+    console.log(req.body)
+    let { name, description, releaseDate, rating, genres, platforms } = req.body;
+    platforms = platforms.join(', ')
+    try {
+        const gameCreated = await Videogame.findOrCreate({
+            where: {
+                name,
+                description,
+                releaseDate,
+                rating,
+                platforms
+            }
+        })
+        await gameCreated[0].setGenres(genres);
+    } catch (err) {
+        console.log(err);
+    }
+    res.send('Created succesfully')
+})
+
 
  module.exports = router;
