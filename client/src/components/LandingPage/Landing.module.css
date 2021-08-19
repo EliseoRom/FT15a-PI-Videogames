@@ -17,34 +17,38 @@
 }
 
 .boton {
-   /* display: inline-block;
-   align-items: center;
-   border-bottom: 4px;
-   border-radius: 23px;
-   border : 5px solid rgb(210, 350, 220);
-   text-align: center;
-   text-decoration: none;
-   justify-content: center;
-   font-size:16px; 
-   margin:0;
-   padding:12px; 
-   color:rgb(20, 15, 15);
-   background-color: grey; */
-   /* margin-top: 130px; */
-    cursor:pointer;
-    width: 150%;
-    border-radius: 400%;
-    margin-left: 0vh;
-    padding: 10px 20px;
-    border-radius: 17px;
-    outline: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    background-color: var(list-style-type);
-	 box-shadow: 10px 6px 23px 10px rgba(49, 228, 33, 0.53);
-  
+   cursor:pointer;
+   width: 150%;
+   border-radius: 400%;
+   margin-left: 0vh;
+   padding: 10px 20px;
+   border-radius: 17px;
+   outline: none;
+   border: none;
+   font-size: 20px;
+   cursor: pointer;
+   background-color: var(list-style-type);
+   box-shadow: 10px 6px 23px 10px rgba(49, 228, 33, 0.53);
+   
 }
 .boton:hover{
-  color:rgb(255, 89, 89);
+   color:rgb(255, 89, 89);
 }
+
+
+
+
+/* display: inline-block;
+align-items: center;
+border-bottom: 4px;
+border-radius: 23px;
+border : 5px solid rgb(210, 350, 220);
+text-align: center;
+text-decoration: none;
+justify-content: center;
+font-size:16px; 
+margin:0;
+padding:12px; 
+color:rgb(20, 15, 15);
+background-color: grey; */
+/* margin-top: 130px; */

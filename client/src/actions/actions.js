@@ -85,8 +85,9 @@ export function sortByRating(value) {
 
 //.................... POST CREATE GAME.................
 export function postGame(payload) {
+    console.log(payload)
     return async function(dispatch) {
-        const post = await axios.get('http://localhost:3001/videogame', payload)
+        const post = await axios.post('http://localhost:3001/video/create', payload)
         return {
             type:POST_GAME, 
             post

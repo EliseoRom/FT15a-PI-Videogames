@@ -1,14 +1,15 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { getVideoGames, filterByGenres, filterOrigin, filterName } from "../../actions/actions";
+import { getVideoGames, filterOrigin, filterName, sortByRating, getGenres, filterByGenres } from "../../actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 import Paginado from "./Paginado";
 import style from "./Home.module.css";
 //import Search from "../Search/Search";
 import { Link } from "react-router-dom";
+
 //import { connect} from "react-redux";
 //import {useState, useEffect} from 'react';
-//import Navbar from "../NavBar/NavBar";
+import Navbar from "../NavBar/NavBar";
 // import Card from "../Card/Card";
 // import { Fragment } from "react";
 // import {Link} from 'react-router-dom';
@@ -17,12 +18,14 @@ import { Link } from "react-router-dom";
 
 function Home() {
       //-----PAGINADO-----//
-
-  const dispatch = useDispatch();
-  const allVideo = useSelector((state) => state.videogames);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [charactersPerPage] = useState(9); // lo que se muestra en pagina
-  // const [order, setOrder] = useState('')
+      const dispatch = useDispatch();
+      //const genres= useSelector((state) => state.genres )
+      const allVideo = useSelector((state) => state.videogames);
+      const [currentPage, setCurrentPage] = useState(1);
+      const [charactersPerPage] = useState(9); // lo que se muestra en pagina
+      //const [order, setOrder] = useState('')
+      //let [filterGen, setFilterGen] = useState('');
+  //const [order, setOrder] = useState("")
   const indexLastCharacter = currentPage * charactersPerPage; // el ultimo indice (posittion) el game que renderizo
   const indexFirstCharacter = indexLastCharacter - charactersPerPage; // resto los caracteres qe muetro por pagina  9
   const currentCharacters = allVideo.slice(
@@ -37,33 +40,49 @@ function Home() {
     setCurrentPage(pageNumber);
   };
 
-  
   useEffect(() => {
+    dispatch(getGenres());
+    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => {
+    
     dispatch(getVideoGames());
-  }, [dispatch]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
    //------------------------FUNCTION FILTER------------------------// 
 // accedo a los paylod del select que renderizo con el e target value
 // el valor que le paso a mi value tiene que coincidir con el del back de la api
 function handleFilterGenre(e){
-  e.preventDefault()
+  //e.preventDefault();
 dispatch(filterByGenres(e.target.value));
+//setFilterGen(e.target.value);
 }
 function handlefilterOrigin(e) {
   e.preventDefault()
   dispatch(filterOrigin(e.target.value));
+  setCurrentPage(1);
 }
-function handleFilterName(e) {
+function handleFilterName(e) { // A z 
   e.preventDefault()
   dispatch(filterName(e.target.value));
   setCurrentPage(1);
-  //setOrden(`Ordenado ${e.target.value}`)
-
+  
+  //setOrder(`Ordenado ${e.target.value}`);
 }
-
+function handleFilterRaiting(e) { // A z 
+  e.preventDefault()
+  dispatch(sortByRating(e.target.value));
+  setCurrentPage(1);
+  
+ // setOrder(`Ordenado ${e.target.value}`);
+}
 
 
   return (
     <div className={style.s}>
+      <Navbar/>
       <div className={style.info}></div>
       <h1> GAME COLLECTION </h1>
                         
@@ -71,14 +90,24 @@ function handleFilterName(e) {
       <select id="order" onChange={(e) => handleFilterName(e)}> 
                 
                     <option value="Default">Default</option>
-                    <option value="az">A-Z</option>
-                    <option value="za">Z-A</option>
+                    <option value="ORDER_ASC">A-Z</option>
+                    <option value="ORDER_DES">Z-A</option>
       </select>
-      <div>
-                      <span>  Filter Genres  </span>
-
-      <select id='genres' onChange={(e) => handleFilterGenre(e)}>
-                    <option value="All games">Every Games</option>
+      
+     <div>
+                   <span> Filter Origin </span>
+      <select onChange={(e)=> handlefilterOrigin(e)}>
+                <option value="ALL">All Games</option>
+                <option value="DB"> Local Games</option> 
+                <option value="API"> External Games</option> 
+      </select> 
+     </div>
+     <div className=''>
+                <label htmlFor="genres">
+                    <span className=''>Filter by Genres</span>
+                </label>
+                <select id='genres' onChange={(e) => handleFilterGenre(e)} className=''>
+                    <option value=''>Default</option>
                     <option value="Action">Action</option>
                     <option value="Indie">Indie</option>
                     <option value="Adventure">Adventure</option>
@@ -98,23 +127,29 @@ function handleFilterName(e) {
                     <option value="Board Games">Board Games</option>
                     <option value="Educational">Educational</option>
                     <option value="Card">Card</option>
-        </select>
-        </div>
-     <div>
-                   <span> Filter Origin </span>
-      <select id="origin"onChange={(e)=> handlefilterOrigin(e)}>
-                <option value="All games">All Games</option>
-                <option value="local"> Local Games</option> 
-                <option value="external"> External Games</option> 
-      </select> 
-      </div>
-      <div>
-                         <span>Order Rating </span>
+                </select>
+            </div>
+      {/* <div>
+        
+                       <spam>Fiter Genre</spam>
+          <select onChange={(e) => handleFilterGenre(e)} value={filterGen} name='genre'>
+                   */}
+                    {/* <option default value="All"></option>  */}
+
+                      {/* {genres.map((e) => (
+            <option key={e.id} value={e.name}>  {e.name} </option>
+    
+            ))}
+          </select>
+         
+        </div> */}
+              <div>
+                         <span>Filter Raiting </span>
                 
-                <select>
-                    <option value="Default">Default</option>
-                    <option value="high">Highest Rated</option>
-                    <option value="less">Less Rated</option>
+                <select onChange={(e) => handleFilterRaiting(e)}>
+                    <option value="All">Default</option>
+                    <option value="RAITING_MAX">Raiting Max</option>
+                    <option value="RAITING_MIN">Raiting Min</option>
                 </select>
             </div>
 
@@ -135,7 +170,7 @@ function handleFilterName(e) {
                <p>{videogame.genres}</p>
                <img
                src={videogame.background_image}
-               alt="holaaa no se muestra esto"
+               alt=""
                width="300px"
                height="170px"
              ></img>
@@ -149,6 +184,8 @@ function handleFilterName(e) {
 
 
 export default Home;
+
+
 
 // ACA TENGO UN COMPONENTE  <Navbar />
 
@@ -179,3 +216,30 @@ export default Home;
 //                     })
 //                 }
 //  </div>
+
+/* <div>
+                      <span>  Filter Genres  </span>
+
+      <select id='genres' onChange={(e) => handleFilterGenre(e)}>
+                    <option value="All games">Every Games</option>
+                    <option value="Action">Action</option>
+                    <option value="Indie">Indie</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="RPG">RPG</option>
+                    <option value="Strategy">Strategy</option>
+                    <option value="Shooter">Shooter</option>
+                    <option value="Casual">Casual</option>
+                    <option value="Simulation">Simulation</option>
+                    <option value="Puzzle">Puzzle</option>
+                    <option value="Arcade">Arcade</option>
+                    <option value="Platformer">Platformer</option>
+                    <option value="Racing">Racing</option>
+                    <option value="Massively Multiplayer">Massively Multiplayer</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Fighting">Fighting</option>
+                    <option value="Family">Family</option>
+                    <option value="Board Games">Board Games</option>
+                    <option value="Educational">Educational</option>
+                    <option value="Card">Card</option>
+        </select>
+        </div> */
