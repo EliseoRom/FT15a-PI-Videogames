@@ -81,17 +81,16 @@ function CreateGame() {
             return alert(Object.values(errors).concat(checkboxsErrors).join('\n'));
         }
        await axios.post('http://localhost:3001/videogames/create', form)
-        alert(`${form.name} created succesfully`)
+        alert(`${form.name}The Game created OK!!!`)
         
     }
 
-    // <Navbar />
     return (
         <div className={s.creategame}>
             <Navbar />
             <div className={s.wrapper}>
                 <div className={s.container}>
-                    <h1 className={s.title}>Create your own Game</h1>
+                    <h1 className={s.title}>Create Game🎮🚀</h1>
                     <form onSubmit={handleSubmit} onChange={handleChange}>
                         <label htmlFor='name'>Name: </label>
                         <br />
@@ -172,7 +171,7 @@ function CreateGame() {
                                 <input name='Fighting' value='15' type="checkbox" id="Fighting" />
                             </div>
                         </div>
-                        {/* END GENRES */}
+                     
                         <div id='platforms' className={s.platformsContainer}>
                             <label className={s.labelTitle}>Platforms </label>
                             <div className={s.divgenre}>
@@ -209,6 +208,7 @@ function CreateGame() {
                             </div>
                         </div>
                         <br />
+                        <button className={s.btn} type='/videogames'>Back</button>
                         <button className={s.btn} type='submit'>Create</button>
                     </form>
                 </div>

@@ -1,0 +1,22 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+}
+
+.pagination button{
+  /* background: linear-gradient(rgba(8, 8, 255, 0.842), rgb(248, 248, 248), rgb(170, 170, 170), #fafafa, #00fb00, #ffffff, #363636); */
+  background: none;
+  border:aqua;
+  color: #054ce6;
+  font-weight: 800;
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+
+.item button:hover {
+  cursor: pointer;
+  font-size: 230%;
+  text-shadow: 20 20 5px rgb(255, 34, 34),
+}

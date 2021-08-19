@@ -4,12 +4,11 @@ import { getVideoGames, filterOrigin, filterName, sortByRating, getGenres, filte
 import { useDispatch, useSelector } from "react-redux";
 import Paginado from "./Paginado";
 import style from "./Home.module.css";
-//import Search from "../Search/Search";
 import { Link } from "react-router-dom";
+import Navbar from "../NavBar/NavBar";
+
 
 //import { connect} from "react-redux";
-//import {useState, useEffect} from 'react';
-import Navbar from "../NavBar/NavBar";
 // import Card from "../Card/Card";
 // import { Fragment } from "react";
 // import {Link} from 'react-router-dom';
@@ -59,19 +58,19 @@ function handleFilterGenre(e){
 dispatch(filterByGenres(e.target.value));
 //setFilterGen(e.target.value);
 }
-function handlefilterOrigin(e) {
+function handleFilterOrigin(e) {
   e.preventDefault()
   dispatch(filterOrigin(e.target.value));
-  setCurrentPage(1);
+  
 }
-function handleFilterName(e) { // A z 
+function handleFilterName(e) { 
   e.preventDefault()
   dispatch(filterName(e.target.value));
   setCurrentPage(1);
   
   //setOrder(`Ordenado ${e.target.value}`);
 }
-function handleFilterRaiting(e) { // A z 
+function handleFilterRaiting(e) { 
   e.preventDefault()
   dispatch(sortByRating(e.target.value));
   setCurrentPage(1);
@@ -96,15 +95,15 @@ function handleFilterRaiting(e) { // A z
       
      <div>
                    <span> Filter Origin </span>
-      <select onChange={(e)=> handlefilterOrigin(e)}>
+      <select id="origin" onChange={(e)=> handleFilterOrigin(e)}>
                 <option value="ALL">All Games</option>
-                <option value="DB"> Local Games</option> 
-                <option value="API"> External Games</option> 
+                <option value="db"> BD GAMES</option> 
+                <option value="API"> API GAMES</option> 
       </select> 
      </div>
      <div className=''>
                 <label htmlFor="genres">
-                    <span className=''>Filter by Genres</span>
+                    <span className=''>Filter Genres</span>
                 </label>
                 <select id='genres' onChange={(e) => handleFilterGenre(e)} className=''>
                     <option value=''>Default</option>
@@ -129,21 +128,8 @@ function handleFilterRaiting(e) { // A z
                     <option value="Card">Card</option>
                 </select>
             </div>
-      {/* <div>
-        
-                       <spam>Fiter Genre</spam>
-          <select onChange={(e) => handleFilterGenre(e)} value={filterGen} name='genre'>
-                   */}
-                    {/* <option default value="All"></option>  */}
-
-                      {/* {genres.map((e) => (
-            <option key={e.id} value={e.name}>  {e.name} </option>
-    
-            ))}
-          </select>
-         
-        </div> */}
-              <div>
+      
+            <div>
                          <span>Filter Raiting </span>
                 
                 <select onChange={(e) => handleFilterRaiting(e)}>
@@ -156,8 +142,7 @@ function handleFilterRaiting(e) { // A z
       <Paginado
         charactersPerPage={charactersPerPage}
         allCharacters={allVideo.length}
-        paginado={paginado}
-      />
+        paginado={paginado}/>
 
       {currentCharacters.map((videogame) => {
         return (
@@ -180,66 +165,6 @@ function handleFilterRaiting(e) { // A z
       })}
     </div>
   );
-} //  finish function HOME
-
-
+} 
+//  finish function HOME
 export default Home;
-
-
-
-// ACA TENGO UN COMPONENTE  <Navbar />
-
-
-
-// set anterior por las dudas
-// function mapStateToProps(state) {
-//   return {
-//     videogames: state.videogames,
-//   };
-//}
-// function mapDispatchToProps(dispactch) {
-//   return {
-//     getVideoGames: (videogames) => dispactch(getVideoGames(videogames)),
-//   };
-//}
-
-
-// <div className={style.cards}>
-//                 {
-//                     juegos && juegos.map((juego,i)=>{
-//                         return <Card key={i}
-//                         id={juego.id}
-//                         name={juego.name}
-//                         genres={juego.genres}
-//                         image={juego.image}
-//                         />
-//                     })
-//                 }
-//  </div>
-
-/* <div>
-                      <span>  Filter Genres  </span>
-
-      <select id='genres' onChange={(e) => handleFilterGenre(e)}>
-                    <option value="All games">Every Games</option>
-                    <option value="Action">Action</option>
-                    <option value="Indie">Indie</option>
-                    <option value="Adventure">Adventure</option>
-                    <option value="RPG">RPG</option>
-                    <option value="Strategy">Strategy</option>
-                    <option value="Shooter">Shooter</option>
-                    <option value="Casual">Casual</option>
-                    <option value="Simulation">Simulation</option>
-                    <option value="Puzzle">Puzzle</option>
-                    <option value="Arcade">Arcade</option>
-                    <option value="Platformer">Platformer</option>
-                    <option value="Racing">Racing</option>
-                    <option value="Massively Multiplayer">Massively Multiplayer</option>
-                    <option value="Sports">Sports</option>
-                    <option value="Fighting">Fighting</option>
-                    <option value="Family">Family</option>
-                    <option value="Board Games">Board Games</option>
-                    <option value="Educational">Educational</option>
-                    <option value="Card">Card</option>
-        </select>
-        </div> */

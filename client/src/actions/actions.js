@@ -40,22 +40,28 @@ export function filterByGenres(payload) {
     return { type: 'FILTER_BY_GENRES', payload };
 }
 // Aca 2...............FILTER ORIGIN..................
-// return { type: 'FILTER_ORIGIN', payload: origin };
-export function filterOrigin(value) {
-    if (value === 'DB') {
-		return {
-			type: 'DB',
-		};
-	} else if (value === 'API'){
-		return {
-			type: 'API',
-		};
-	}else if (value === 'ALL') {
-		return {
-            type: 'ALL'
-        }
-} 
+export function filterOrigin(origin) {
+    return {
+        type: FILTER_ORIGIN, payload: origin
+    }
 }
+
+// export function filterOrigin(value) {
+//     if (value === 'DB') {
+// 		return {
+// 			type: 'DB',
+// 		};
+// 	} else if (value === 'API'){
+// 		return {
+// 			type: 'API',
+// 		};
+// 	}else if (value === 'ALL') {
+// 		return {
+//             type: 'ALL'
+//         }
+// }
+
+// }
 // aca 3 ...................FILTER NAME................
 export function filterName(value) {
        if (value === 'ORDER_ASC') {
@@ -94,13 +100,6 @@ export function postGame(payload) {
         }
     }
 }
-// export function createVideogame(obj) {
-//     return (dispatch) =>
-//         axios.post('http://localhost:3001/videogame', obj)
-//         .then((res) => {
-//           dispatch({type: CREATE_VIDEOGAME, payload: res.data});
-//         });
-// }
 
 export function getGenres(){
     return async function(dispatch){
@@ -119,9 +118,11 @@ export const ORDER_DESC = 'ORDER_DESC';
 export const RAITING_MAX = 'RAITING_MAX';
 export const RAITING_MIN = 'RAITING_MIN';
 export const GET_GENRE ='GET_GENRE';
-export const DB = "DB";
-export const ALL = "ALL";
-export const API = "API";
+// FILTER ORIGIN
+export const FILTER_ORIGIN = 'FILTER_ORIGIN';
+// export const DB = "DB";
+// export const ALL = "ALL";
+// export const API = "API";
 // Create Game
 export const CREATE_VIDEOGAME = "CREATE_VIDEOGAME";
 export const GET_VIDEOGAMES = 'GET_VIDEOGAMES';

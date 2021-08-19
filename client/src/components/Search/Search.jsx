@@ -2,7 +2,7 @@ import React, {  useState } from "react";
 import { connect } from "react-redux";
 import { searchByName } from "../../actions/actions";
 //import { Link } from 'react-router-dom';
-//import s from "./Search.module.css"
+import s from "./Search.module.css"
 
 function Search(props){
  const [input, setInput] = useState({name:""});
@@ -20,11 +20,10 @@ function Search(props){
       return (
         <div>
        
-          <form className="" onSubmit={(e) => handleSubmit(e)}>
+          <form className={s.buttonSearch} onSubmit={(e) => handleSubmit(e)}>
             <div>
               
-              <input className=""
-                name="name"
+              <input 
                 type="text"
                 placeholder = "Search game..."
                 autoComplete="off"
@@ -32,7 +31,7 @@ function Search(props){
                 onChange={(e) => handleChange(e)}
               />
             
-            <button type="submit">SEARCH</button>
+            <button type="submit">🔍</button>
             </div>
           </form>
          

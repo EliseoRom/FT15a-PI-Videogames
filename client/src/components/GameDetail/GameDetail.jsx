@@ -29,7 +29,7 @@ import Navbar from "../NavBar/NavBar"
                             <div ><p>Platforms:</p><p>{props.videogameDetail.platforms? props.videogameDetail.platforms :  props.videogameDetail.platforms.map(plat => plat.name).join(', ') }</p></div>
                             <div ><p>Release Date:</p><p>{props.videogameDetail.releaseDate}</p></div>
                             <div ><p>Rating:</p><p>{props.videogameDetail.rating}</p></div>
-                            {/* <div ><p>Description:</p><p>{props.videogameDetail.description}</p></div> */}
+    
                             <p>Description:</p>
                             <div dangerouslySetInnerHTML={{ __html: props.videogameDetail.description}}></div>
                             </div>

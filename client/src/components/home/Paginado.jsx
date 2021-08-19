@@ -1,4 +1,4 @@
-
+import s from './Paginado.module.css';
 import React from 'react';
 
 export default function Paginado ({charactersPerPage, allCharacters, paginado}){
@@ -8,17 +8,13 @@ export default function Paginado ({charactersPerPage, allCharacters, paginado}){
         pageNumbers.push(i) // para que la pagina comience en  1 let i=1
     }
     return(
-        <nav>
-            <ul className='paginado'>
-               {
-                   pageNumbers && 
-                   pageNumbers.map(number =>
-                   ( 
+        <nav className={s.pagination}>
+            <ul className={s.item}>
+               {pageNumbers && pageNumbers.map(number => ( 
                        <button onClick={() => paginado(number)} 
-                        className='number'key={number}>
+                       key={number}>
                           {number}
                        </button >
-
                    ))} 
             </ul>
         </nav>

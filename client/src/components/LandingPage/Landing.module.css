@@ -8,12 +8,21 @@
    background-size:cover;
    background-attachment: fixed;
    display:grid;
-   
+
 }
+
 .info{
    display: flex;
    align-items: center;
    justify-content: center;
+}
+.text {
+   color: rgb(0, 0, 0);
+   text-shadow: rgb(243, 243, 243);
+   text-shadow: 0.2em 0.5em 0.1em rgb(0, 255, 76),-0.3em 0.1em 0.1em rgba(0, 3, 0, 0.205), 0.4em -0.3em 0.1em rgb(255, 255, 255);
+   align-items: center;
+   justify-content: center;
+   display:inline-flex;
 }
 
 .boton {
@@ -34,21 +43,3 @@
 .boton:hover{
    color:rgb(255, 89, 89);
 }
-
-
-
-
-/* display: inline-block;
-align-items: center;
-border-bottom: 4px;
-border-radius: 23px;
-border : 5px solid rgb(210, 350, 220);
-text-align: center;
-text-decoration: none;
-justify-content: center;
-font-size:16px; 
-margin:0;
-padding:12px; 
-color:rgb(20, 15, 15);
-background-color: grey; */
-/* margin-top: 130px; */
