@@ -73,7 +73,9 @@ router.post('/create', async (req, res) => {
                 description,
                 releaseDate,
                 rating,
-                platforms
+                platforms,
+                db: true,
+                background_image: 'https://shortest.link/EL7',
             }
         })
         await gameCreated[0].setGenres(genres);
@@ -82,6 +84,5 @@ router.post('/create', async (req, res) => {
     }
     res.send('Created succesfully')
 })
-
 
  module.exports = router;

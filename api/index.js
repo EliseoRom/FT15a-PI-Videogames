@@ -25,9 +25,9 @@ const { conn } = require('./src/db.js');
 
 //const PORT = process.env.PORT || 3001
 // Syncing all the models at once.
-conn.sync({ force: false }).then(() => {  
+conn.sync({ force: true }).then(() => {  
   // cambiar el force en TRUE se velvan a cargar en la base de datos cada vez que levanto corto el servidor
-  // en FALSE ya quedan cargados en la BD
+  // en FALSE ya quedan cargada  la BD
   console.log('La coneccion con la base de datos si es correcta')
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console

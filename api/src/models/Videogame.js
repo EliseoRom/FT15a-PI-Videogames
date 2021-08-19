@@ -35,7 +35,12 @@ module.exports = (sequelize) => {
     // agregar esta columna para el filtro origin
     db: {
       type: DataTypes.BOOLEAN,
-      //defaultValue: true,
+      // allowNull: false,
+      // defaultValue: true
   },
+  background_image: {
+    type: DataTypes.STRING,
+
+  }
   });
 };
