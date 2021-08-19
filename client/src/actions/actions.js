@@ -35,34 +35,27 @@ export function getVideogameDetail(id){
         });
     };
 }
-//  aca 1 ..............FILTER GENRE..................
+//...............FILTER GENRE..................
 export function filterByGenres(payload) {
     return { type: 'FILTER_BY_GENRES', payload };
 }
-// Aca 2...............FILTER ORIGIN..................
-export function filterOrigin(origin) {
-    return {
-        type: FILTER_ORIGIN, payload: origin
-    }
+//...............FILTER ORIGIN..................
+export function filterOrigin(value) {
+    if (value === 'DB') {
+		return {
+			type: 'DB',
+		};
+	} else if (value === 'API'){
+		return {
+			type: 'API',
+		};
+	}else if (value === 'ALL') {
+		return {
+            type: 'ALL'
+        }
 }
-
-// export function filterOrigin(value) {
-//     if (value === 'DB') {
-// 		return {
-// 			type: 'DB',
-// 		};
-// 	} else if (value === 'API'){
-// 		return {
-// 			type: 'API',
-// 		};
-// 	}else if (value === 'ALL') {
-// 		return {
-//             type: 'ALL'
-//         }
-// }
-
-// }
-// aca 3 ...................FILTER NAME................
+}
+//..................FILTER NAME................
 export function filterName(value) {
        if (value === 'ORDER_ASC') {
             return {
@@ -75,7 +68,7 @@ export function filterName(value) {
         }
     }
    
- // aca 4.................FILTER RAITING................
+ //..................FILTER RAITING................
 export function sortByRating(value) {
     if (value === 'RAITING_MAX') {
         return {
@@ -86,7 +79,7 @@ export function sortByRating(value) {
             type: 'RAITING_MIN',
         };
     }
-    // return { type: 'BY_RATING', payload: order };
+   
 } 
 
 //.................... POST CREATE GAME.................
@@ -111,23 +104,22 @@ export function getGenres(){
    }
   }
 
-//   TODOS LOS FILTROS
+//.........TODOS LOS FILTROS.........
 export const FILTER_BY_GENRES = 'FILTER_BY_GENRES';
 export const ORDER_ASC = "ORDER_ASC";
 export const ORDER_DESC = 'ORDER_DESC';
 export const RAITING_MAX = 'RAITING_MAX';
 export const RAITING_MIN = 'RAITING_MIN';
 export const GET_GENRE ='GET_GENRE';
-// FILTER ORIGIN
-export const FILTER_ORIGIN = 'FILTER_ORIGIN';
-// export const DB = "DB";
-// export const ALL = "ALL";
-// export const API = "API";
-// Create Game
+//.........FILTER ORIGIN............
+export const DB = "DB";
+export const ALL = "ALL";
+export const API = "API";
+//........Create Game...............
 export const CREATE_VIDEOGAME = "CREATE_VIDEOGAME";
 export const GET_VIDEOGAMES = 'GET_VIDEOGAMES';
 export const  POST_GAME = "POST_GAME";
-// SERCH 
+//---------SERCH ------------------
 export const SEARCH_BY_NAME = 'SEARCH_BY_NAME';
-// DETAIL GAME
+//-------DETAIL GAME---------------
 export const GET_VIDEOGAME_DETAIL = 'GET_VIDEOGAME_DETAIL';

@@ -9,22 +9,22 @@ import {
   RAITING_MAX,
   RAITING_MIN,
   GET_GENRE,
-  // DB,
-  // API,
-  // ALL,
-  FILTER_ORIGIN,
+  DB,
+  API,
+  ALL,
+  // FILTER_ORIGIN,
   
 } from "../actions/actions";
 
 const initialState = {
   videogames: [],
   copyVideogames: undefined,
-  videogameDetail: [], // definir  detail o show
-  videogamesToShow: null,
+  videogameDetail: [],
+  videogamesToShow: [],
   genres: [],
   videogamesFiltro:[],
 };
-// { } type  --->
+
 function rootReducer(state = initialState, action, payload) {
   switch (action.type) {
     //voy a devolver todo lo que te mande la accion de GET_VIDEOGAMES
@@ -32,7 +32,8 @@ function rootReducer(state = initialState, action, payload) {
       return {
         ...state,
         videogames: action.payload,
-        copyVideogames: action.payload,
+        videogamesToShow: action.payload,
+        // aca pasa DB
       };
 
       
@@ -51,86 +52,64 @@ function rootReducer(state = initialState, action, payload) {
       };
     // aca 1 -------------FILTER GENRES-------------------
     case FILTER_BY_GENRES: {
-      if (!action.payload) return { ...state, videogames: state.copyVideogames };
+      if (!action.payload) return { ...state, videogamesToShow: state.videogamesToShow };
       return {
           ...state,
-          videogames: state.copyVideogames.filter(e => e.genres.includes(action.payload))
+          videogamesToShow: state.videogames.filter(e => e.genres.includes(action.payload))
     }
-
-    }
+}
       case GET_GENRE: 
             return {
             ...state,
             genres:action.payload
-       }
-      
-    //------------------ FILTER_ORIGIN:--------------------
-    case FILTER_ORIGIN: {
-      if (payload === "All games") return {...state, videogamesToShow: null}
-            // eslint-disable-next-line eqeqeq
-            if (payload == "db") return {
-                ...state,
-                videogamesToShow: state.videogames.filter(e => e.local)
-            }
-            return {
-                ...state,
-                videogamesToShow: state.videogames.filter(e => !e.local)
-            }
-        }
-//     case DB: return {
-//       ...state,
-//       videogames: state.videogames.filter((b) => b.id.length > 6),
-//       videogames: state.videogames.filter((b) => b.db === true ),    
-//   };
-//      case API: return {
-// 		...state,
-    
-//    videogames: state.videogames.filter((b) => b.id.length < 1000),
-// 	 videogames: state.videogames.filter((b) => !b.db),    
-// };
-//     case ALL: 
-//       return {
-//     ...state,
-//     videogames: state.videogames,
-    
-// }
-  // aca 3 ------------- FILTER NAME ------------
+    }
+      //------------------ FILTER_ORIGIN:--------------------
+    case DB: return {
+        ...state,
+      // videogames:state.videogames.filter((b) => b.db ),
+      videogamesToShow:state.videogames.filter((b) => b.db ),    
+  };
+    case API: return {
+      ...state,
+    // videogames: state.videogames.filter((b) => !b.db), 
+	  videogamesToShow: state.videogames.filter((b) => !b.db),    
+};
+    case ALL: return {
+    ...state,
+    videogamesToShow: state.videogames,
+    // videogames: state.videogames,
+}
+//------------- FILTER NAME------------
 case ORDER_ASC: return{
         ...state,
-        videogames: state.videogames
+        videogamesToShow: state.videogamesToShow
         .filter((b) => b.name !== null)
         .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)),
         
 }
     case ORDER_DESC: return{
         ...state,
-        videogames: state.videogames
+        videogamesToShow: state.videogamesToShow
 		    .filter((b) => b.name !== null)
 			.sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1)),
            
 }
-    // aca 4 --------------FILTER RAITING-----------
+    //----------------FILTER RAITING-----------
   case RAITING_MAX: return{
       ...state,
-      videogames: state.videogames
+      videogamesToShow: state.videogamesToShow
       .filter((b) => b.rating !== null)
       .sort((a, b) => (a.rating > b.rating ? 1 : -1)),
-      
       
  }
   case RAITING_MIN: return{
       ...state,
-     videogames: state.videogames
+      videogamesToShow: state.videogamesToShow
       .filter((b) => b.rating !== null)
       .sort((a, b) => (a.rating < b.rating ? 1 : -1)),
      
   }
     
-    
-    //  case POST_GAME:
-    //      return {
-    //       ...state
-    //      }
 
     default:
       return { ...state };

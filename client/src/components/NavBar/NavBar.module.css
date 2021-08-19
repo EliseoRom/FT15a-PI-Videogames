@@ -3,7 +3,7 @@
   justify-content: space-between;
   display: flex;
   align-items: center;
-  padding: 3px 15px;
+  padding: 2px 15px;
   height: 75px;
   flex-direction: row;
   display: flex;
@@ -15,11 +15,15 @@
   margin-left: 310px;
   display: inline-block;
   background-color: var(arial);
-  box-shadow: 15px 6px 30px 10px rgba(240, 241, 240, 0.37);
-  padding: 10px 20px;
+  box-shadow: 5px 6px 30px 10px rgba(240, 241, 240, 0.609);
+  padding: 10px 45px;
   border-radius: 12px;
   cursor: pointer;
 }
+.text:hover{
+  color:rgb(255, 0, 0);
+}
+
 
 .h3 {
   font-family: "Lexend", sans-serif;
@@ -27,4 +31,3 @@
   margin-left: 10px;
   color: #070000;
 }
-

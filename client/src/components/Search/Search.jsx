@@ -32,6 +32,7 @@ function Search(props){
               />
             
             <button type="submit">🔍</button>
+            <button className={s.button}type="submit">Reset🔂</button>
             </div>
           </form>
          

@@ -10,7 +10,12 @@
     background-repeat: no-repeat;
     position:absolute;
     text-align:center;
-    font-weight: 50;
+    font-weight: 30;
+    /* background-position: center center;
+   background-size:cover;
+   background-attachment: fixed;
+   display:grid; */
+
 }
 
 .wrapper {
@@ -55,7 +60,7 @@
     display:flow-root;
 }
 
-.platformsContainer {
+.platforms {
     font-size: 18px;
     display:inline-flex;
     flex-direction: column;
@@ -75,9 +80,9 @@
     font-size: 20px;
     cursor: pointer;
     background-color: var(list-style-type);
-    box-shadow: 10px 6px 23px 10px rgba(49, 228, 33, 0.53);
+    box-shadow: 15px 6px 23px 10px rgba(49, 228, 33, 0.53);
 }
-.boton:hover{
+.btn:hover{
     color:rgb(255, 89, 89);
  }
 

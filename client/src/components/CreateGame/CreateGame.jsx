@@ -62,7 +62,7 @@ function CreateGame() {
         if (!form.description) {
             errors.description = 'Description is required';
         } else if (form.description.length < 8) {
-            errors.description = 'Description must have at least 8 characters'
+            errors.description = 'Description 8 characters'
         }
         if (!form.rating) {
             errors.rating = 'Rating is required';
@@ -172,7 +172,7 @@ function CreateGame() {
                             </div>
                         </div>
                      
-                        <div id='platforms' className={s.platformsContainer}>
+                        <div id='platforms' className={s.platforms}>
                             <label className={s.labelTitle}>Platforms </label>
                             <div className={s.divgenre}>
                                 <label htmlFor="PC">PC</label>
@@ -208,8 +208,7 @@ function CreateGame() {
                             </div>
                         </div>
                         <br />
-                        <button className={s.btn} type='/videogames'>Back</button>
-                        <button className={s.btn} type='submit'>Create</button>
+                         <button className={s.btn} type='submit'>Create</button>
                     </form>
                 </div>
             </div>

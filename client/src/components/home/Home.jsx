@@ -8,18 +8,13 @@ import { Link } from "react-router-dom";
 import Navbar from "../NavBar/NavBar";
 
 
-//import { connect} from "react-redux";
-// import Card from "../Card/Card";
-// import { Fragment } from "react";
-// import {Link} from 'react-router-dom';
-
-      //--------HOME------//
+      //----------------------HOME-----------------------------//
 
 function Home() {
-      //-----PAGINADO-----//
+      //--------------------PAGINADO---------------------------//
       const dispatch = useDispatch();
       //const genres= useSelector((state) => state.genres )
-      const allVideo = useSelector((state) => state.videogames);
+      const allVideo = useSelector((state) => state.videogamesToShow);
       const [currentPage, setCurrentPage] = useState(1);
       const [charactersPerPage] = useState(9); // lo que se muestra en pagina
       //const [order, setOrder] = useState('')
@@ -82,28 +77,20 @@ function handleFilterRaiting(e) {
   return (
     <div className={style.s}>
       <Navbar/>
-      <div className={style.info}></div>
-      <h1> GAME COLLECTION </h1>
-                        
+      <h1 className={style.title}> GAME COLLECTION </h1>
+            <div className={style.boton}> 
+
                          <span>Order Name </span>
-      <select id="order" onChange={(e) => handleFilterName(e)}> 
+             <select id="order" onChange={(e) => handleFilterName(e)}> 
                 
                     <option value="Default">Default</option>
                     <option value="ORDER_ASC">A-Z</option>
                     <option value="ORDER_DES">Z-A</option>
-      </select>
-      
-     <div>
-                   <span> Filter Origin </span>
-      <select id="origin" onChange={(e)=> handleFilterOrigin(e)}>
-                <option value="ALL">All Games</option>
-                <option value="db"> BD GAMES</option> 
-                <option value="API"> API GAMES</option> 
-      </select> 
-     </div>
-     <div className=''>
+             </select>
+          </div>
+            <div className={style.boton}>
                 <label htmlFor="genres">
-                    <span className=''>Filter Genres</span>
+                    <span >Filter Genres</span>
                 </label>
                 <select id='genres' onChange={(e) => handleFilterGenre(e)} className=''>
                     <option value=''>Default</option>
@@ -129,8 +116,8 @@ function handleFilterRaiting(e) {
                 </select>
             </div>
       
-            <div>
-                         <span>Filter Raiting </span>
+            <div className={style.boton}>
+                         <span >Filter Raiting </span>
                 
                 <select onChange={(e) => handleFilterRaiting(e)}>
                     <option value="All">Default</option>
@@ -138,6 +125,14 @@ function handleFilterRaiting(e) {
                     <option value="RAITING_MIN">Raiting Min</option>
                 </select>
             </div>
+            <div className={style.boton}>
+                   <span> Filter Origin </span>
+      <select onChange={(e)=> handleFilterOrigin(e)}>
+                <option value='ALL'>All Games</option>
+                <option value="DB"> DB GAMES</option> 
+                <option value="API"> API GAMES</option> 
+      </select> 
+     </div>
 
       <Paginado
         charactersPerPage={charactersPerPage}
@@ -148,11 +143,11 @@ function handleFilterRaiting(e) {
         return (
           <div>
                  <Link to={`/videogames/${videogame.id}`}>
-                  <p className="Game-Name">{videogame.name}</p>
+                  <p className={style.gametitle}>{videogame.name}</p>
                   
                   </Link>
               
-               <p>{videogame.genres}</p>
+               <p className={style.generotitle}>{videogame.genres}</p>
                <img
                src={videogame.background_image}
                alt=""
