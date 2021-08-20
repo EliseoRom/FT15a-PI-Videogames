@@ -4,9 +4,9 @@ const axios = require("axios");
 const { API_KEY } = process.env;
 require('dotenv').config();
 
-// Me trae  todos los juegos y tambien los games por nombre 
+// Me traigo todos los juegos y tambien los games por nombre 
 //  http://localhost:3001/videogames
-//  http://localhost:3001/videogames?name=dog 
+//  http://localhost:3001/videogames?name=mario 
 // GET a '/videogames
 router.get('/', async (req, res) => {
     let videogamesDb = await Videogame.findAll({
@@ -60,8 +60,8 @@ router.get('/', async (req, res) => {
     }
 })
 
-// console.log("hola entre al post")
-//POST CREATE VIDEOGAME modificado
+
+//-------------POST CREATE VIDEOGAME--------------------//
 router.post('/create', async (req, res) => {
     console.log(req.body)
     let { name, description, releaseDate, rating, genres, platforms } = req.body;

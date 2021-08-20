@@ -6,9 +6,8 @@ const { Router } = require('express');
 const router = Router();
 const axios = require('axios').default;
 
-
 //http://localhost:3001/genres
-//GET a /genres
+//-------GET a /genres-------//
 router.get('/', async (req, res) => {
     const genresDb = await Genre.findAll();
     if (genresDb.length) return res.send(`Ya existen generos en la Base de Datos, longitud: ${genresDb.length}`)
@@ -23,5 +22,4 @@ router.get('/', async (req, res) => {
     
     res.json(genres)
 })
-
- module.exports = router;
+module.exports = router;

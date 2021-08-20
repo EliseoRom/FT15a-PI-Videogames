@@ -33,7 +33,7 @@ router.get('/:idVideogame', async (req, res) => {
             background_image,
             genres,
             description,
-            releaseDate,   // forma de acceder a la informacion
+            releaseDate,   // forma de acceder a la info
             rating,
             platforms
         })
