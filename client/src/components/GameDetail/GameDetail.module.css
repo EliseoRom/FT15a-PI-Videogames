@@ -10,26 +10,25 @@
     position:absolute;
     text-align:center;
     font-weight: 50;
+    overflow: auto;
+    display: ruby-base;
 }
 
-/* border-radius: 2%;
-    background: rgba(255, 255, 255, 0.4);
-    height: 700px;
-    width: 500px; */
-    
+
     .containerdetail {
   margin: auto;
   font-family: arial black;
-  border-radius: 2%;
+  border-radius: 4%;
   box-shadow: 2% 0 1em 0 rgba(255, 1, 1, 0.25);
-   max-width: 900px;
-  padding: 1.5em;
+   max-width: 400px;
+  padding: 1em;
   position: absolute;
   top: 10%;
   left: 20%;
-  z-index: 1;
+  z-index: 4;
   width: 80%;
   height: 85vh;
+  display: table;
 }
 .containerdetail:before {
   
@@ -48,7 +47,7 @@
 
 
 .containerdetail:after {
-  background: linear-gradient(100deg, #ffffff77 30%, #0429fd 150%);
+  background: linear-gradient(100deg, #ffffff88 30%, #0429fd60 150%);
   /* background: rgba(228, 245, 245, 0.4); */
   content: "";
   display: block;
@@ -77,5 +76,8 @@
   font-size: 17px;
   cursor: pointer;
   background-color: var(list-style-type);
-  box-shadow: 10px 6px 23px 10px rgba(6, 158, 13, 0.53);
+  box-shadow: 10px 10px 23px 10px rgb(2, 253, 15);
+}
+.buttonback:hover{
+  color:rgb(255, 0, 0);
 }

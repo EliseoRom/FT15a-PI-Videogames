@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import s from './Create.module.css'
 import Navbar from '../NavBar/NavBar'
 import axios from 'axios';
-
+//---------FUNCTION CREATE GAME----------//
 function CreateGame() {
-    const [errors, setErrors] = useState({ form: 'Must complete the form' });
+    const [errors, setErrors] = useState({ form: 'complete form' });
     const [form, setForm] = useState({
         name: '',
         description: '',
@@ -55,9 +55,9 @@ function CreateGame() {
     const validate = form => {
         let errors = {};
         if (!form.name) {
-            errors.name = 'Game Name is required';
+            errors.name = 'Name required';
         } else if (form.name.length < 4) {
-            errors.name = 'Game Name must have at least 4 characters';
+            errors.name = 'Game Name 4 characters';
         }
         if (!form.description) {
             errors.description = 'Description is required';
@@ -173,7 +173,7 @@ function CreateGame() {
                         </div>
                      
                         <div id='platforms' className={s.platforms}>
-                            <label className={s.labelTitle}>Platforms </label>
+                            <label className={s.label}>Platforms </label>
                             <div className={s.divgenre}>
                                 <label htmlFor="PC">PC</label>
                                 <input name='PC' type="checkbox" id="PC" />

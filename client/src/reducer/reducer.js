@@ -12,7 +12,6 @@ import {
   DB,
   API,
   ALL,
-  // FILTER_ORIGIN,
   
 } from "../actions/actions";
 
@@ -27,13 +26,12 @@ const initialState = {
 
 function rootReducer(state = initialState, action, payload) {
   switch (action.type) {
-    //voy a devolver todo lo que te mande la accion de GET_VIDEOGAMES
     case GET_VIDEOGAMES:
       return {
         ...state,
         videogames: action.payload,
         videogamesToShow: action.payload,
-        // aca pasa DB
+        
       };
 
       
@@ -42,7 +40,7 @@ function rootReducer(state = initialState, action, payload) {
       return {
         ...state,
         videogames: action.payload,
-        copyVideogames: action.payload,
+        videogamesToShow: action.payload,
       };
     //-------------------- DETAIL GAME------------------
     case GET_VIDEOGAME_DETAIL:
@@ -66,18 +64,18 @@ function rootReducer(state = initialState, action, payload) {
       //------------------ FILTER_ORIGIN:--------------------
     case DB: return {
         ...state,
-      // videogames:state.videogames.filter((b) => b.db ),
+     
       videogamesToShow:state.videogames.filter((b) => b.db ),    
   };
     case API: return {
       ...state,
-    // videogames: state.videogames.filter((b) => !b.db), 
+    
 	  videogamesToShow: state.videogames.filter((b) => !b.db),    
 };
     case ALL: return {
     ...state,
     videogamesToShow: state.videogames,
-    // videogames: state.videogames,
+  
 }
 //------------- FILTER NAME------------
 case ORDER_ASC: return{
@@ -94,7 +92,7 @@ case ORDER_ASC: return{
 			.sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1)),
            
 }
-    //----------------FILTER RAITING-----------
+//----------------FILTER RAITING-----------
   case RAITING_MAX: return{
       ...state,
       videogamesToShow: state.videogamesToShow

@@ -8,6 +8,7 @@
    /* background: linear-gradient(rgba(10, 10, 50, 0.842), rgb(248, 248, 248), rgb(170, 170, 170), #fafafa, #030303, #ffffff, #363636); */
      margin: auto;
      background-position: center center;
+     overflow: auto;
 
    
    

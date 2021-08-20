@@ -22,7 +22,7 @@ import Navbar from "../NavBar/NavBar"
                  {props.videogameDetail.length !== 0 ? 
                     <div> 
                             
-                            <img clasName={s.image}src={props.videogameDetail.background_image} width="360" height="240" alt=""/>
+                            <img clasName={s.image}src={props.videogameDetail.background_image} width="480" height="250" alt=""/>
                             <div> 
                             <div ><p>Name:</p><p>{props.videogameDetail.name}</p></div>
                             <div ><p>Genres:</p><p>{props.videogameDetail.genres.join(', ')}</p></div>
@@ -39,7 +39,7 @@ import Navbar from "../NavBar/NavBar"
                             width="550" 
                             height="250" alt="LoadingGif" className='loadingGif'/></div>
     
-                    }<div>
+                }<div>
                       
                              <Link to='/videogames'>
                          <button className={s.buttonback} >Back</button>
