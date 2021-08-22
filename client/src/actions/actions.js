@@ -1,9 +1,7 @@
 import axios from 'axios';
-// import { GET_VIDEOGAMES } from '.././constantes'
+
 
 // ------------ACTIONS---CREATORS--------------//
-//Conecto el Front con el Back
-
 export function getVideoGames() {
     return function(dispatch) {
         return axios.get ('http://localhost:3001/videogames')
@@ -93,7 +91,7 @@ export function postGame(payload) {
         }
     }
 }
-
+//....................GET GENRE.......................
 export function getGenres(){
     return async function(dispatch){
       const info = await axios.get("http://localhost:3001/genres");

@@ -16,12 +16,12 @@ function Home() {
       //const genres= useSelector((state) => state.genres )
       const allVideo = useSelector((state) => state.videogamesToShow);
       const [currentPage, setCurrentPage] = useState(1);
-      const [charactersPerPage] = useState(9); // lo que se muestra en pagina
+      const [videojuegosPerPage] = useState(9); // lo que se muestra en pagina
       //const [order, setOrder] = useState('')
       //let [filterGen, setFilterGen] = useState('');
   //const [order, setOrder] = useState("")
-  const indexLastCharacter = currentPage * charactersPerPage; // el ultimo indice (posittion) el game que renderizo
-  const indexFirstCharacter = indexLastCharacter - charactersPerPage; // resto los caracteres qe muetro por pagina  9
+  const indexLastCharacter = currentPage * videojuegosPerPage; // el ultimo indice (posittion) el game que renderizo
+  const indexFirstCharacter = indexLastCharacter - videojuegosPerPage; // resto los caracteres qe muetro por pagina  9
   const currentCharacters = allVideo.slice(
     //esta const me guarda cuales son los games que tengo que renderizar dependiendo de la pagina
     // el indice del primer game y ultimo 
@@ -51,7 +51,7 @@ function Home() {
 function handleFilterGenre(e){
   //e.preventDefault();
 dispatch(filterByGenres(e.target.value));
-//setFilterGen(e.target.value);
+
 }
 function handleFilterOrigin(e) {
   e.preventDefault()
@@ -70,12 +70,12 @@ function handleFilterRaiting(e) {
   dispatch(sortByRating(e.target.value));
   setCurrentPage(1);
   
- // setOrder(`Ordenado ${e.target.value}`);
+ 
 }
 
 
   return (
-    <div className={style.s}>
+    <div className={style.se}>
       <Navbar/>
       <h1 className={style.title}> GAME COLLECTION </h1>
             <div className={style.boton}> 
@@ -133,22 +133,22 @@ function handleFilterRaiting(e) {
                 <option value="API"> API GAMES</option> 
       </select> 
      </div>
+     <div>
 
       <Paginado
-        charactersPerPage={charactersPerPage}
+        videojuegosPerPage={videojuegosPerPage}
         allCharacters={allVideo.length}
         paginado={paginado}/>
-
+         </div>
       {currentCharacters.map((videogame) => {
         return (
-          <div>
+          <div className={style.cardgeneral}>
                  <Link to={`/videogames/${videogame.id}`}>
                   <p className={style.gametitle}>{videogame.name}</p>
-                  
                   </Link>
               
                <p className={style.generotitle}>{videogame.genres}</p>
-               <img
+               <img className={style.card}
                src={videogame.background_image}
                alt=""
                width="300px"

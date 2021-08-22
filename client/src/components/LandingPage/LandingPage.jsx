@@ -19,6 +19,3 @@ export default function LandinPage() {
     )
 
 }
-            // <Link to = '/videogames'>
-            //     <button > Ingresar </button>
-            // </Link>

@@ -1,7 +1,6 @@
 import React, {  useState } from "react";
 import { connect } from "react-redux";
 import { searchByName } from "../../actions/actions";
-//import { Link } from 'react-router-dom';
 import s from "./Search.module.css"
 
 function Search(props){
@@ -11,7 +10,7 @@ function Search(props){
      
      setInput({name: e.target.value})
   }
-   function handleSubmit(e) { // boton
+   function handleSubmit(e) { 
       e.preventDefault();
       // lo que tengo en mi estado local le llega mi actions va a llamar al back 
       props.searchByName(input.name);

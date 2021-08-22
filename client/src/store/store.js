@@ -8,9 +8,4 @@ export const store = createStore(
  composeWithDevTools (applyMiddleware(thunk)));
 
   
-  // extencion de Redux para ver los cambios en la app
-;
-
-
-
 export default store;

@@ -1,5 +1,35 @@
-.s{
-   background-image: url('../../jpg/781246.jpg');
+
+   /* margin:0; */
+   /* background-image: url('../../jpg/2.jpg');
+   justify-content: space-around;
+   background-position: center center;
+   justify-content: space-evenly;
+   flex-direction: row;
+   display: flex;
+   align-items: center; */
+   
+   /* width: 100%;
+   height: 100%;
+    overflow:scroll;
+   position:fixed;
+   background-size:cover;           
+   background-attachment: fixed;
+   display: flex;
+   flex-flow: wrap;
+   
+/*    
+   display: list-item;
+   flex-direction:column; */
+   /* flex-wrap: wrap; */
+   
+   /* background: linear-gradient(rgba(10, 10, 50, 0.842), rgb(59, 59, 59), rgb(170, 170, 170), #fafafa, #030303, #1b1b1b, #363636); */
+
+
+.se{
+   /* background-image: url('../../jpg/781246.jpg'); */
+   background: rgb(34,193,195);
+   background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(4,5,31,1) 100%);
+   
    flex-direction:row;
    flex-wrap: wrap;
    justify-content: space-evenly;
@@ -9,6 +39,8 @@
      margin: auto;
      background-position: center center;
      overflow: auto;
+     grid-column-start:inherit;
+     height: 100vh;
 
    
    

@@ -1,33 +1,36 @@
 .navBar {
-  background: linear-gradient(140deg, #0363ff 0%, #05155c 60%, rgb(0, 0, 0));
+  /* background: linear-gradient(140deg, #0363ff 0%, #05155c 60%, rgb(0, 0, 0));
   justify-content: space-between;
   display: flex;
   align-items: center;
   padding: 2px 15px;
   height: 75px;
   flex-direction: row;
-  display: flex;
+  display: flex; */
+  display: inline-block;
+  
 }
+
 .text {
   color: rgb(248, 248, 248);
   text-decoration: none;
-  background-color: rgba(0, 0, 0, 0);
-  margin-left: 310px;
+  background-color: rgba(0, 0, 0, 0.164);
+  margin-left: 270px;
   display: inline-block;
   background-color: var(arial);
-  box-shadow: 5px 6px 30px 10px rgba(240, 241, 240, 0.609);
+  box-shadow: 5px 6px 30px 10px rgba(240, 241, 240, 0.753);
   padding: 10px 45px;
   border-radius: 12px;
   cursor: pointer;
 }
 .text:hover{
-  color:rgb(255, 0, 0);
+  color:rgb(255, 31, 31);
 }
 
 
-.h3 {
+/* .h3 {
   font-family: "Lexend", sans-serif;
   font-size: 30px;
   margin-left: 10px;
   color: #070000;
-}
+} */
