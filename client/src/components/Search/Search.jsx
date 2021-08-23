@@ -19,10 +19,11 @@ function Search(props){
       return (
         <div>
        
-          <form className={s.buttonSearch} onSubmit={(e) => handleSubmit(e)}>
+          <form className={s.button1} onSubmit={(e) => handleSubmit(e)}>
             <div>
               
               <input 
+              className={s.button2}
                 type="text"
                 placeholder = "Search game..."
                 autoComplete="off"
@@ -30,8 +31,8 @@ function Search(props){
                 onChange={(e) => handleChange(e)}
               />
             
-            <button type="submit">🔍</button>
-            <button className={s.button}type="submit">Reset🔂</button>
+            <button type="submit" className={s.button3}>🔍-🎮</button>
+            <button className={s.button3}type="submit">Reset🔂</button>
             </div>
           </form>
          

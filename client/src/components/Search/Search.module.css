@@ -1,23 +1,57 @@
-.buttonSearch {
-  top: 20px;
-  left: -20px;
+.button1 {
+  /* top: 20px;
+  left: 20px;
   cursor: pointer;
   width: 200px;
   margin-left: -3vh;
   padding: -30px -20px;
   outline: none;
   border: none;
-  font-size: 1px;
+  font-size: 3px; */
 
-  cursor: pointer;
-  background-color: var(--primary);
-  box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.603);
+  position: relative;
+        top: 10px;
+        left: 90px;
+        cursor:pointer;
+        width: 110px;
+        border-radius: 20%;
+        /* margin-left: 2vh;
+      padding: 8px 10px;
+       */
+      outline: none;
+      border:black;
+      font-size: 25px;
+      
+      cursor: pointer;
+      /* background-color: var(--primary); */
+      box-shadow: 15px 20px 25px 8px rgba(0, 0, 0, 0.30);;
+
 }
-.button {
-  top: 10px;
-  cursor: pointer;
+.button2 {
+  position: relative;
+  top: -0px;
+  left: -50px;
+      cursor: text;
+      width: 210px;
+      border-radius: 5%;
+      margin-left: 2vh;
+    padding: 8px 10px;
+ 
+    outline: none;
+    border: none;
+    font-size: 18px;
+    
+    cursor: pointer;
+    background-color:rgba(255, 255, 255, 0.822);
+    box-shadow: 7px 10px 20px 8px rgba(0, 0, 0, 0.30);
+
+}
+.button3 {
+  top: 40px;
+  cursor:pointer;
   width: 200px;
+  height: 400;
 }
-.button:hover{
+.button3:hover{
   color:rgb(255, 0, 0);
 }

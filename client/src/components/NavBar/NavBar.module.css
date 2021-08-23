@@ -18,7 +18,7 @@
   margin-left: 270px;
   display: inline-block;
   background-color: var(arial);
-  box-shadow: 5px 6px 30px 10px rgba(240, 241, 240, 0.753);
+  box-shadow: 5px 6px 30px 10px rgba(240, 241, 240, 0.952);
   padding: 10px 45px;
   border-radius: 12px;
   cursor: pointer;
@@ -26,11 +26,8 @@
 .text:hover{
   color:rgb(255, 31, 31);
 }
+.ulNav {
+  display: flex;
+  justify-content: space-between;
+}
 
-
-/* .h3 {
-  font-family: "Lexend", sans-serif;
-  font-size: 30px;
-  margin-left: 10px;
-  color: #070000;
-} */
