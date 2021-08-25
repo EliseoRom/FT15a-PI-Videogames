@@ -4,23 +4,23 @@ const axios = require("axios");
 const { API_KEY } = process.env;
 require('dotenv').config();
 
-// Me traigo todos los juegos y tambien los games por nombre 
+
+//------------ GET a '/videogames-------------------//
 //  http://localhost:3001/videogames
 //  http://localhost:3001/videogames?name=mario 
-// GET a '/videogames
 router.get('/', async (req, res) => {
     let videogamesDb = await Videogame.findAll({
         include: Genre
     });
-    //Parseamos el objeto recibido de findAll porque es una referencia circular (?)
+    //Parseo el objeto recibido de findAl
     videogamesDb = JSON.stringify(videogamesDb);
     videogamesDb = JSON.parse(videogamesDb);
-    //Aca dejamos el arreglo de generos plano con solo los nombres de cada genero
+    //arreglo de generos plano con solo los nombres de cada genero
     videogamesDb = videogamesDb.reduce((acc, el) => acc.concat({
         ...el,
         genres: el.genres.map(g => g.name)
     }), [])
-// Me traigo los personajes por query (nombre en la URL)
+// traigo los games por query ( URL)
 // pregunto si hay un name por query y busco esa propiedad
     if (req.query.name) {
         try {
@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
                 genres: el.genres.map(g => g.name)
             }), [])
             const filteredGamesDb = videogamesDb.filter(g => g.name.toLowerCase().includes(req.query.name.toLowerCase()));
-            // El nombre de la busqueda que llegue lo paso a miniscula .tolowerCase
+            // El nombre de la busqueda .tolowerCase
             // . include me trae todo lo que incluya esos caracteres me hace una busque mas global
             const results = [...filteredGamesDb, ...response.data.results.splice(0, 15)];
             return res.json(results)
@@ -61,9 +61,9 @@ router.get('/', async (req, res) => {
 })
 
 
+// console.log(req.body)
 //-------------POST CREATE VIDEOGAME--------------------//
 router.post('/create', async (req, res) => {
-    console.log(req.body)
     let { name, description, releaseDate, rating, genres, platforms } = req.body;
     platforms = platforms.join(', ')
     try {

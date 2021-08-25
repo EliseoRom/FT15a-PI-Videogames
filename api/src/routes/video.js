@@ -6,7 +6,7 @@ const { v4: uuidv4 } = require('uuid');
 const { API_KEY } = process.env;
 const router = Router();
 
-// Traigo lo juegos por ID 
+//---------------------GET ID----------------------//
 // http://localhost:3001/videogame/1
 router.get('/:idVideogame', async (req, res) => {
     const { idVideogame } = req.params
@@ -33,7 +33,7 @@ router.get('/:idVideogame', async (req, res) => {
             background_image,
             genres,
             description,
-            releaseDate,   // forma de acceder a la info
+            releaseDate,
             rating,
             platforms
         })

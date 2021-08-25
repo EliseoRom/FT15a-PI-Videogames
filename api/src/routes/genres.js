@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     const response = await axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`);
     const genres = response.data.results;
     genres.forEach(async g => {
-        await Genre.findOrCreate({ // se fija si esta, en el caso que este no lo crea. Si no esta lo crea
+        await Genre.findOrCreate({ 
             where: {name: g.name}
         }) 
     }) 

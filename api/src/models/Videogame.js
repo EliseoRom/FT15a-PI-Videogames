@@ -1,7 +1,6 @@
-//creo la ID que sea de tipo UUID para generar un numero randown con letras y numeros
-// para que no se pisen o sobreescriba 
-//allowNull (es para que si o si tenga el id que le indico) 
-// si lo seteo en false sig que NO permito que este vacio -- si lo seteo en null (si te permito que este vacio)
+//la ID que sea de tipo UUID para generar un numero randown con letras y numeros y no se pisen o sobreescriba 
+//allowNull (que tenga el id que le indico) 
+// false  NO permito que este vacio -- si lo seteo en null (si permito que este vacio)
 const { DataTypes } = require('sequelize');
 //const { values } = require('sequelize/types/lib/operators');
 // Exportamos una funcion que define el modelo

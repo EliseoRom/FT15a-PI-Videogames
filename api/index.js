@@ -26,8 +26,8 @@ const { conn } = require('./src/db.js');
 //const PORT = process.env.PORT || 3001
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {  
-  // cambiar el force en TRUE se velvan a cargar en la base de datos cada vez que levanto corto el servidor
-  // en FALSE ya quedan cargada  la BD
+  // en TRUE se velvan a cargar en la base de datos cada vez que levanto corto el servidor
+  // en FALSE quedan cargada  la BD
   console.log('La coneccion con la base de datos si es correcta')
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
@@ -37,8 +37,8 @@ conn.sync({ force: true }).then(() => {
 
 //app.listen(PORT,() => console.log(`Listening in port${PORT}`))
 
-// del lado del cliente -----> react redux
 
+// del lado del cliente -----> react redux
 // del lado del servidor localhost: 3001
 // get /Videogame
 // ------fetch a la api de games en mi base de datos ----> res . send()
