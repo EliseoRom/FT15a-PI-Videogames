@@ -1,8 +1,5 @@
-<p align='left'>
-    <img src='https://c.wallhere.com/photos/d1/cf/need_for_speed_underground_2_nissan_city_bridge_man-739102.jpg!d' </img>
-</p>
 
-# Individual Project - Henry Videogames
+# Videogames App
 
 <p align="right">
   <img height="200" src="./videogame.png" />
@@ -16,16 +13,8 @@
 - Aprender y practicar el workflow de GIT.
 - Usar y practicar testing.
 
-## Horarios y Fechas
 
-El proyecto tendrá una duración máxima de tres semanas. En el caso de que completan todas las tareas antes de dicho lapso podrán avisar a su Instructor para coordinar una fecha de presentación del trabajo (DEMO).
 
-## Comenzando
-
- 1. Forkear el repositorio para tener una copia del mismo en sus cuentas
- 2. Clonar el repositorio en sus computadoras para comenzar a trabajar
-
-Tendrán un `boilerplate` con la estructura general tanto del servidor como de cliente.
 
 __IMPORTANTE:__ Es necesario contar minimamente con la última versión estable de Node y NPM. Asegurarse de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto.
 
@@ -77,13 +66,8 @@ __IMPORTANTE__: Para las funcionalidades de filtrado y ordenamiento NO pueden ut
   - GET https://api.rawg.io/api/genres
   - GET https://api.rawg.io/api/games/{id}
 
-### Requerimientos mínimos:
 
-A continuación se detallaran los requerimientos mínimos para la aprobación del proyecto individial. Aquellos que deseen agregar más funcionalidades podrán hacerlo. En cuanto al diseño visual no va a haber wireframes ni prototipos prefijados sino que tendrán libertad de hacerlo a su gusto pero tienen que aplicar los conocimientos de estilos vistos en el curso para que quede agradable a la vista.
-
-__IMPORTANTE__: No se permitirá utilizar librerías externas para aplicar estilos a la aplicación. Tendrán que utilizar CSS con algunas de las opciones que vimos en dicha clase (CSS puro, CSS Modules o Styled Components)
-
-#### Tecnologías necesarias:
+#### Tecnologías usadas en este proyecto:
 - [ ] React
 - [ ] Redux
 - [ ] Express
@@ -91,15 +75,16 @@ __IMPORTANTE__: No se permitirá utilizar librerías externas para aplicar estil
 
 #### Frontend
 
-Se debe desarrollar una aplicación de React/Redux que contenga las siguientes pantallas/rutas.
+Desarrolle una aplicación de React/Redux que contiene las siguientes pantallas/rutas.
 
-__Pagina inicial__: deben armar una landing page con
-- [ ] Alguna imagen de fondo representativa al proyecto
+__Pagina inicial__: Landing page con
+- [ ] Imagen de fondo
 - [ ] Botón para ingresar al home (`Ruta principal`)
+- [ ] Botón para About
 
-__Ruta principal__: debe contener
+__Ruta principal__: Contiene
 - [ ] Input de búsqueda para encontrar videojuegos por nombre
-- [ ] Área donde se verá el listado de videojuegos. Deberá mostrar su:
+- [ ] Área donde se ve el listado de videojuegos con sus detalles
   - Imagen
   - Nombre
   - Géneros
