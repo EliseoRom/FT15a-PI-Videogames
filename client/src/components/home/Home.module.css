@@ -57,11 +57,11 @@
   justify-content: center;
   color: hsl(0, 0%, 99%);
   text-decoration-line: overline;
-
-  border: 5px solid rgba(255, 255, 255, 0.178);
+  font-size: 21px;
+  border: 5px solid rgba(173, 5, 5, 0.89);
   text-decoration: none;
   border-radius: 8px;
-  box-shadow: 10px 6px 23px 10px rgba(49, 228, 33, 0.53);
+  box-shadow: 10px 6px 23px 10px rgba(255, 255, 255, 0.753);
 }
 .boton:hover {
   color: rgb(255, 0, 0);

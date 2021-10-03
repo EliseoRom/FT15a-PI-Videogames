@@ -5,6 +5,7 @@ import LandingPage from './components/LandingPage/LandingPage';
 import CreateGame from './components/CreateGame/CreateGame';
 import Home from './components/Home/Home';
 import GameDetail from './components/GameDetail/GameDetail';
+import About from './components/About/About';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <Route exact path="/videogames" component={ Home } />
     <Route exact path="/videogames/:id"render={({ match }) => <GameDetail id={match.params.id} />}></Route>
     <Route exact path="/createVideogame" component={CreateGame} />
+    <Route exact path="/about" component={About} />
    </Switch>
     </BrowserRouter>
   );

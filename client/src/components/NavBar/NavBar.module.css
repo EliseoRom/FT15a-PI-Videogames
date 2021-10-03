@@ -8,6 +8,8 @@
   flex-direction: row;
   display: flex; */
   display: inline-block;
+  display: flex;
+  margin: auto;
   
 }
 

@@ -23,6 +23,7 @@
    align-items: center;
    justify-content: center;
    display:inline-flex;
+   font-size: 45px;
 }
 
 .boton {
@@ -40,7 +41,26 @@
    box-shadow: 15px 6px 25px 10px rgb(49, 228, 33);
    
 }
+
+.boton2 {
+   cursor:pointer;
+   width: 170%;
+   border-radius: 400%;
+   margin-left: 0vh;
+   padding: 10px 20px;
+   border-radius: 17px;
+   outline: none;
+   border: none;
+   font-size: 20px;
+   cursor: pointer;
+   background-color: var(list-style-type);
+   box-shadow: 15px 6px 25px 10px rgb(49, 228, 33);
+   
+}
 .boton:hover{
+   color:rgb(255, 89, 89);
+}
+.boton2:hover{
    color:rgb(255, 89, 89);
 }
 
