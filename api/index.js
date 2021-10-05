@@ -29,7 +29,7 @@ conn.sync({ force: true }).then(() => {
   // en TRUE se velvan a cargar en la base de datos cada vez que levanto corto el servidor
   // en FALSE quedan cargada  la BD
   console.log('La coneccion con la base de datos si es correcta')
-  server.listen(3001, () => {
+  server.listen(process.env.PORT, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
