@@ -25,7 +25,7 @@ const { conn } = require('./src/db.js');
 
 //const PORT = process.env.PORT || 3001
 // Syncing all the models at once.
-conn.sync({ force: false }).then(() => {  
+conn.sync({ force: true }).then(() => {  
   // en TRUE se velvan a cargar en la base de datos cada vez que levanto corto el servidor
   // en FALSE quedan cargada  la BD
   console.log('La coneccion con la base de datos si es correcta')
