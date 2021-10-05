@@ -4,7 +4,7 @@ import axios from 'axios';
 // ------------ACTIONS---CREATORS--------------//
 export function getVideoGames() {
     return function(dispatch) {
-        return axios.get ('http://localhost:3001/videogames')
+        return axios.get ('/videogames')
         .then((response) => {
             dispatch({ 
                 type: 'GET_VIDEOGAMES',
@@ -16,7 +16,7 @@ export function getVideoGames() {
 } //............SEARCH NAME FUNCTION..............
 export function searchByName(name) {
     return  function (dispatch) {
-       return axios.get(`http://localhost:3001/videogames?name=${name}`)
+       return axios.get(`/videogames?name=${name}`)
        .then((response) => {
          dispatch({
              type:'SEARCH_BY_NAME', 
@@ -26,7 +26,7 @@ export function searchByName(name) {
 } //...............DETAIL GAME....................
 export function getVideogameDetail(id){
     return function (dispatch) {
-        return fetch(`http://localhost:3001/videogame/${id}`)
+        return fetch(`/videogame/${id}`)
         .then(response => response.json())
         .then(json => {
             dispatch({type:"GET_VIDEOGAME_DETAIL", payload:json})
@@ -84,7 +84,7 @@ export function sortByRating(value) {
 export function postGame(payload) {
     console.log(payload)
     return async function(dispatch) {
-        const post = await axios.post('http://localhost:3001/video/create', payload)
+        const post = await axios.post('/video/create', payload)
         return {
             type:POST_GAME, 
             post
@@ -94,7 +94,7 @@ export function postGame(payload) {
 //....................GET GENRE.......................
 export function getGenres(){
     return async function(dispatch){
-      const info = await axios.get("http://localhost:3001/genres");
+      const info = await axios.get("/genres");
     return dispatch({
       type: GET_GENRE,
       payload: info.data
