@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import React from 'react';
 import LandingPage from './components/LandingPage/LandingPage';
 import CreateGame from './components/CreateGame/CreateGame';
-import Home from './components/Home/Home';
+import Home from './components/home/Home';
 import GameDetail from './components/GameDetail/GameDetail';
 import About from './components/About/About';
 
